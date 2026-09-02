@@ -88,14 +88,87 @@ const courses = [
             'JavaScript'
         ],
         completed: false
+    },
+    {
+        subject: 'ITM',
+        number: 111,
+        title: 'Introduction to Databases',
+        credits: 2,
+        certificate: 'Web Development',
+        description: 'This course introduces database concepts, design, and basic SQL queries.',
+        technology: [
+            'SQL'
+        ],
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 330,
+        title: 'Web Frontend Development II',
+        credits: 2,
+        certificate: 'Web Development',
+        description: 'Advanced frontend development focusing on frameworks, state management, and performance.',
+        technology: [
+            'HTML',
+            'CSS',
+            'JavaScript'
+        ],
+        completed: false
+    },
+    {
+        subject: 'CSE',
+        number: 340,
+        title: 'Web Backend Development',
+        credits: 2,
+        certificate: 'Web Development',
+        description: 'Covers server-side programming, databases, and backend frameworks.',
+        technology: [
+            'Node.js',
+            'SQL'
+        ],
+        completed: false
+    },
+    {
+        subject: 'CSE',
+        number: 341,
+        title: 'Web Services',
+        credits: 2,
+        certificate: 'Web Development',
+        description: 'Focuses on APIs, RESTful services, and integration between systems.',
+        technology: [
+            'REST',
+            'JSON',
+            'Node.js'
+        ],
+        completed: false
+    },
+    {
+        subject: 'WDD',
+        number: 430,
+        title: 'Web Full-Stack Development',
+        credits: 2,
+        certificate: 'Web Development',
+        description: 'Capstone course combining frontend and backend into full-stack applications.',
+        technology: [
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'Node.js',
+            'SQL'
+        ],
+        completed: false
     }
 ]
 const courseList = document.getElementById('courseList');
 
+const webCompProgCourses = courses.filter(course => course.certificate === 'Web and Computer Programming');
+
 const cseCourses = courses.filter(course => course.subject === 'CSE');
 const wddCourses = courses.filter(course => course.subject === 'WDD');
+
 const filterLinks = document.querySelectorAll('#filter a');
 const count = document.getElementById('count');
+
 function renderCourses(courses) {
     for (let i = 0; i < courses.length; i++) {
         courseList.innerHTML +=
@@ -104,10 +177,6 @@ function renderCourses(courses) {
             <span>${courses[i].subject} ${courses[i].number}: </span>
             <span>${courses[i].title}</span>
                 </div>`
-        // <p>${courses[i].credits} Credits</p>
-        // <p>${courses[i].certificate}</p>
-        // <p>Description: ${courses[i].description}</p>
-        // <p>Technology Used: ${courses[i].technology}</p>
     }
     const courseCount = courses.reduce((total, course) => {
         return total + 1;
@@ -116,7 +185,7 @@ function renderCourses(courses) {
     count.textContent = courseCount;
 }
 
-
+renderCourses(webCompProgCourses);
 for (let i = 0; i < filterLinks.length; i++) {
     filterLinks[i].addEventListener('click', function (event) {
         event.preventDefault();

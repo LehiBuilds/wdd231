@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" description="Lehi Gomez">
-    <meta name="description" description="A webpage for WDD231 course practice assignment. See my progress each week as I learn more about frontend development">
+    <meta name="author" content="Lehi Gomez">
+    <meta name="description" content="A webpage for WDD231 course practice assignment. See my progress each week as I learn more about frontend development">
     <title>Home Assignment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/large.css">
@@ -30,6 +31,16 @@
     <main>
         <h1>Home</h1>
         <section>
+            <h2>About Me</h2>
+            <div class="my-info">
+                <picture class="hero-image">
+                    <source media="(min-width: 768px)" srcset="images/profile-large.webp">
+                    <img src="images/profile-small.webp" alt="Lehi Gomez" class="profile-image" width="400" height="350">
+                </picture>
+                <p class="introduction">Hi! I'm <strong>Lehi Gomez</strong>, passionately pursuing my Bachelor of Applied Science in Software Development through BYU-Pathway Worldwide. I'm excited to build a strong foundation in web and computer programming while growing as a developer and problem-solver.</p>
+            </div>
+        </section>
+        <section>
             <h2>Web and Computer Programming Certificate</h2>
             <div id="filter" class="filter">
                 <a href="#" data-filter="ALL">All Courses</a>
@@ -40,20 +51,17 @@
             <div id="courseList" class="course-list"></div>
         </section>
         <section>
-            <h2></h2>
-        </section>
-        <section>
-            <h2></h2>
+            <h2>Web Development Certificate</h2>
         </section>
     </main>
     <footer>
         <div class="social">
             <a href="https://www.facebook.com/lehi.gomez.122023" target="_blank"><img src="images/facebook.svg" alt="facebook" width="16" height="16"></a>
-            <a href="" target="_blank"><img src="images/github.svg" alt="github" width="16" height="16"></a>
-            <a href="" target="_blank"><img src="images/linkedin.svg" alt="linkedin" width="16" height="16"></a>
-            <a href="" target="_blank"><img src="images/twitter-x.svg" alt="twitter" width="16" height="16"></a>
+            <a href="https://github.com/lehibuilds" target="_blank"><img src="images/github.svg" alt="github" width="16" height="16"></a>
+            <a href="https://www.linkedin.com/in/lehi-gomez-a639b723a/" target="_blank"><img src="images/linkedin.svg" alt="linkedin" width="16" height="16"></a>
+            <a href="https://x.com/lehi_ontoria" target="_blank"><img src="images/twitter-x.svg" alt="twitter width=" 16" height="16"></a>
         </div>
-        <p>&copy <span id="currentyear"></span> Lehi Gomez | Philippines</p>
+        <p>&copy <span id="currentyear"></span> 🎓 Lehi Gomez 🎓 Philippines</p>
         <p class="modification">Last Modification: <span id="lastModified"></span></p>
 
     </footer>

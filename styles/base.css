@@ -1,11 +1,20 @@
 :root {
     --terra-cotta: #E07A5F;
     --deep-slate-blue: #3D405B;
+    --font-primary: 'Google Sans Flex', sans-serif;
 }
 
 * {
-    font-family: "";
+    font-family: var(--font-primary);
     box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    line-height: 1.6;
 }
 
 /**************** HEADER ****************/
@@ -83,8 +92,108 @@ header span {
 }
 
 /**************** MAIN ****************/
+.my-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.hero-image {
+    max-width: 400px;
+}
+
+
+main {
+    padding: 0 1rem;
+    flex: 1;
+}
+
 h1 {
     color: var(--deep-slate-blue);
+    font-weight: 600;
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+h2 {
+    color: var(--deep-slate-blue);
+    font-weight: 600;
+    text-align: left;
+
+}
+
+section p,
+.filter {
+    text-align: justify;
+    padding: 0 1.2rem;
+}
+
+section {
+    margin: 0.5rem .5rem;
+}
+
+
+.filter {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.filter a {
+    padding: 0.75rem 1.25rem;
+    background: var(--terra-cotta);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.filter a:hover {
+    background: #d6624a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(224, 122, 95, 0.3);
+}
+
+.filter a:active {
+    background: #d6624a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(224, 122, 95, 0.3);
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.course-list div {
+    /* background: #f8f9fa; */
+    background: #eceeef;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--terra-cotta);
+    transition: all 0.3s ease;
+}
+
+.course-list div:hover {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 /**************** FOOTER ****************/

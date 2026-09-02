@@ -1,11 +1,17 @@
 @media only screen and (min-width: 38rem) {
 
-    header,
-    main,
-    nav,
-    footer {
-        max-width: 900px;
+    body {
+        display: block;
+        max-width: 100%;
         margin: 0 auto;
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
     }
 
     header {
@@ -21,11 +27,35 @@
         display: flex;
     }
 
+
     .hamburger {
         display: none;
     }
 
     .navigation a {
         border: none;
+    }
+
+    section:first-of-type {
+        display: grid;
+        /* grid-template-columns: 1fr 1fr; */
+        gap: 3rem;
+        align-items: center;
+    }
+
+    /* section:first-of-type .my-info {
+        order: -1;
+    } */
+
+    img.profile-image {
+        max-width: 4000px;
+        margin: 0 auto;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .course-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
     }
 }
