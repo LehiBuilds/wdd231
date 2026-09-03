@@ -1,5 +1,4 @@
 :root {
-    --terra-cotta: #E07A5F;
     --deep-slate-blue: #3D405B;
     --font-primary: 'Google Sans Flex', sans-serif;
 }
@@ -88,7 +87,8 @@ header span {
 }
 
 .navigation a:hover {
-    background-color: var(--terra-cotta);
+    background-color: var(--deep-slate-blue);
+    color: white;
 }
 
 /**************** MAIN ****************/
@@ -118,7 +118,7 @@ h1 {
     color: var(--deep-slate-blue);
     font-weight: 600;
     text-align: center;
-    margin: 0.5rem 0;
+    margin: 0.5rem 0 -1.5rem 0rem;
 }
 
 h2 {
@@ -148,7 +148,7 @@ section {
 
 .filter a {
     padding: 0.75rem 1.25rem;
-    background: var(--terra-cotta);
+    background: var(--deep-slate-blue);
     color: white;
     border-radius: 8px;
     text-decoration: none;
@@ -160,15 +160,9 @@ section {
 }
 
 .filter a:hover {
-    background: #d6624a;
+    background: var(--deep-slate-blue);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(224, 122, 95, 0.3);
-}
-
-.filter a:active {
-    background: #d6624a;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(224, 122, 95, 0.3);
+    box-shadow: 0 4px 12px rgba(12, 2, 27, 0.3);
 }
 
 .course-list {
@@ -179,18 +173,16 @@ section {
 }
 
 .course-list div {
-    /* background: #f8f9fa; */
     background: #eceeef;
     padding: 1rem;
     border-radius: 8px;
-    border-left: 4px solid var(--terra-cotta);
+    border-left: 4px solid var(--deep-slate-blue);
     transition: all 0.3s ease;
 }
 
 .course-list div:hover {
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(61, 64, 91, 0.3);
+    transform: translateY(-1px);
 }
 
 
