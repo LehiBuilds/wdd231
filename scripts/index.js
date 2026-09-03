@@ -8,8 +8,6 @@ navbutton.addEventListener("click", () => {
     navigation.classList.toggle("show");
 });
 
-
-
 /***************** CERTIFICATE COMPLETION ******************/
 const courses = [
     {
@@ -159,46 +157,79 @@ const courses = [
         completed: false
     }
 ]
-const courseList = document.getElementById('courseList');
 
+// First Certificate Elements
+const list1 = document.getElementById('courseListWebCompProgCert');
+const count1 = document.getElementById('countWebCompProgCert');
+const filters1 = document.querySelectorAll('#filterWebCompProgCert a');
+
+// Second Certificate Elements
+const list2 = document.getElementById('courseListWebDevCert');
+const count2 = document.getElementById('countWebDevCert');
+const filters2 = document.querySelectorAll('#filterWebDevCert a');
+
+// Base Array for each certificate
 const webCompProgCourses = courses.filter(course => course.certificate === 'Web and Computer Programming');
+const webDevCourses = courses.filter(course => course.certificate === 'Web Development');
 
-const cseCourses = courses.filter(course => course.subject === 'CSE');
-const wddCourses = courses.filter(course => course.subject === 'WDD');
-
-const filterLinks = document.querySelectorAll('#filter a');
-const count = document.getElementById('count');
-
-function renderCourses(courses) {
-    for (let i = 0; i < courses.length; i++) {
-        courseList.innerHTML +=
+// Render Function
+function renderCourses(courseArray, targetListElement, targetCountElement) {
+    targetListElement.innerHTML = "";
+    for (let i = 0; i < courseArray.length; i++) {
+        targetListElement.innerHTML +=
             `<div class="course-card">
-            <span>${courses[i].completed ? '✔️' : '❌'}</span>
-            <span>${courses[i].subject} ${courses[i].number}: </span>
-            <span>${courses[i].title}</span>
-                </div>`
+            <span>${courseArray[i].completed ? '✔️' : '❌'}</span>
+            <span>${courseArray[i].subject} ${courseArray[i].number}: </span>
+            <span>${courseArray[i].title}</span>
+            </div>`;
+
+        targetCountElement.textContent = courseArray.length;
     }
-    const courseCount = courses.reduce((total, course) => {
-        return total + 1;
-    }, 0);
-
-    count.textContent = courseCount;
 }
+renderCourses(webCompProgCourses, list1, count1);
+renderCourses(webDevCourses, list2, count2);
 
-renderCourses(webCompProgCourses);
-for (let i = 0; i < filterLinks.length; i++) {
-    filterLinks[i].addEventListener('click', function (event) {
+// Certificate 1 Filters (Web and Computer Programming)
+for (let i = 0; i < filters1.length; i++) {
+    filters1[i].addEventListener('click', function (event) {
+
         event.preventDefault();
-        courseList.innerHTML = "";
-        if (event.target.dataset.filter === 'CSE') {
-            renderCourses(cseCourses);
-        } else if (event.target.dataset.filter === 'WDD') {
-            renderCourses(wddCourses);
+        const subjectCode = event.target.dataset.filter;
+
+        if (subjectCode === 'ALL') {
+
+            renderCourses(webCompProgCourses, list1, count1);
+
         } else {
-            renderCourses(courses);
+
+            const filtered = webCompProgCourses.filter(course => course.subject === subjectCode);
+            renderCourses(filtered, list1, count1);
+
         }
-    });
-}
+    }
+    )
+};
+
+// Certificate 2 Filters (Web Development)
+for (let i = 0; i < filters2.length; i++) {
+    filters2[i].addEventListener('click', function (event) {
+
+        event.preventDefault();
+        const subjectCode = event.target.dataset.filter;
+
+        if (subjectCode === 'ALL') {
+
+            renderCourses(webDevCourses, list2, count2);
+
+        } else {
+
+            const filtered = webDevCourses.filter(course => course.subject === subjectCode);
+            renderCourses(filtered, list2, count2);
+
+        }
+    }
+    )
+};
 
 
 /***************** FOOTER ******************/
