@@ -182,9 +182,9 @@ function renderCourses(courseArray, targetListElement, targetCountElement) {
             <span>${courseArray[i].subject} ${courseArray[i].number}: </span>
             <span>${courseArray[i].title}</span>
             </div>`;
-
-        targetCountElement.textContent = courseArray.length;
     }
+
+    targetCountElement.textContent = courseArray.length;
 }
 renderCourses(webCompProgCourses, list1, count1);
 renderCourses(webDevCourses, list2, count2);
@@ -195,13 +195,9 @@ for (let i = 0; i < filters1.length; i++) {
 
         event.preventDefault();
         const subjectCode = event.target.dataset.filter;
-
         if (subjectCode === 'ALL') {
-
             renderCourses(webCompProgCourses, list1, count1);
-
         } else {
-
             const filtered = webCompProgCourses.filter(course => course.subject === subjectCode);
             renderCourses(filtered, list1, count1);
 
