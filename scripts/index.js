@@ -158,30 +158,42 @@ const courses = [
 ]
 
 // First Certificate Elements
-const list1 = document.getElementById('ListFirstCert');
-const count1 = document.getElementById('countFirstCert');
-const credit1 = document.getElementById('firstCertCredits');
-const filters1 = document.querySelectorAll('#filterFirstCert a');
-
-// Second Certificate Elements
-const list2 = document.getElementById('ListWebCert');
-const count2 = document.getElementById('countWebCert');
-const credit2 = document.getElementById('webCertCredits');
-const filters2 = document.querySelectorAll('#filterWebCert a');
-
-// Base Array for each certificate
-const firstCertCourses = courses.filter(course => course.certificate === 'Web and Computer Programming');
-
-const webCertCourses = courses.filter(course => course.certificate === 'Web Development');
+const courseList = document.getElementById('course-list');
+const credits = document.getElementById('credits');
+const filterBtn = document.querySelectorAll('#filter a');
 
 // Render Function
-
-function renderCourses(courseArray, targetListElement, targetCountElement, targetCreditElement) {
+function renderCourses(courseArray, targetListElement, targetCreditElement) {
     targetListElement.innerHTML = '';
-    courseArray.forEach(element => {
-
+    let creditCount = 0;
+    courseArray.forEach(course => {
+        targetListElement.innerHTML +=
+            `<div class="course-card">
+        <span>${course.completed ? '✔️' : '❌'}</span>
+        <span ><strong>${course.subject} ${course.number}</strong></span>
+        <span class="course-title">${course.title}</span>
+        </div>`;
+        creditCount += course.credits;
     });
+    targetCreditElement.textContent = creditCount;
 }
+
+renderCourses(courses, courseList, credits);
+
+// Course Filter
+filterBtn.forEach(btn => {
+    btn.addEventListener('click', function (event) {
+        event.preventDefault();
+        const subjectCode = event.target.dataset.filter;
+
+        if (subjectCode === 'ALL') {
+            renderCourses(courses, courseList, credits);
+        } else {
+            const filteredCourses = courses.filter(course => course.subject === subjectCode);
+            renderCourses(filteredCourses, courseList, credits);
+        }
+    })
+})
 
 /***************** FOOTER ******************/
 const year = document.querySelector("#currentyear");
