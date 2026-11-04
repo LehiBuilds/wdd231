@@ -184,6 +184,10 @@ renderCourses(courses, courseList, credits);
 filterBtn.forEach(btn => {
     btn.addEventListener('click', function (event) {
         event.preventDefault();
+
+        filterBtn.forEach(filter => filter.classList.remove('active'));
+        btn.classList.add('active');
+
         const subjectCode = event.target.dataset.filter;
 
         if (subjectCode === 'ALL') {

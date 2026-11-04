@@ -13,19 +13,25 @@
 }
 
 header {
-    display: grid;
-    grid-template-columns: 44px auto 44px;
-    align-items: center;
-    padding: 5px 0 5px 10px;
     border-bottom: 1px solid #ddd;
-    column-gap: 8px;
     position: sticky;
     top: 0;
     z-index: 100;
     background-color: #fff;
 }
 
-header img {
+.header-inner {
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: center;
+    column-gap: 8px;
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 5px 1rem;
+}
+
+.header-inner img {
     width: 40px;
     height: auto;
 }
@@ -59,9 +65,9 @@ header img {
 .navigation {
     display: none;
     grid-column: 1 / -1;
-    margin-left: -10px;
+    width: calc(100% + 2rem);
+    margin-inline: -1rem;
     background-color: #333;
-    width: 100%;
 }
 
 .navigation.show {
@@ -87,7 +93,7 @@ header img {
 }
 
 .navigation a.current {
-    background-color: #555;
+    /* background-color: #555; */
 }
 
 .navigation a:hover {
@@ -101,6 +107,9 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
     padding: 0 1rem;
     flex: 1;
 }
@@ -111,6 +120,13 @@ h1 {
     text-align: left;
     margin: 1rem 0 -1rem;
     font-size: 2rem;
+}
+
+.intro-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: .5rem 0;
 }
 
 .section-info {
@@ -127,10 +143,12 @@ h2 {
     justify-content: center;
     background-color: #3a3a3a;
     padding: .5rem;
+    height: 2.5rem;
+    align-items: center;
+
 }
 
 .introduction {
-    margin: 4px;
     line-height: 1.5;
     text-align: justify;
 }
@@ -170,6 +188,16 @@ h2 {
     border: none;
     font-size: 1rem;
     font-weight: 500;
+}
+
+.filter a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.filter a.active {
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 .course-list {
