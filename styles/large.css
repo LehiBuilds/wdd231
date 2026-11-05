@@ -56,6 +56,10 @@
         gap: 1rem;
     }
 
+    .course-list div {
+        grid-column: span 1;
+    }
+
     .course-card {
         grid-column: span 1;
     }
