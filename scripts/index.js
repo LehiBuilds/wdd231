@@ -162,20 +162,22 @@ const courseList = document.getElementById('course-list');
 const credits = document.getElementById('credits');
 const filterBtn = document.querySelectorAll('#filter a');
 
-// Render Function
+// Render Function 
 function renderCourses(courseArray, targetListElement, targetCreditElement) {
     targetListElement.innerHTML = '';
-    let creditCount = 0;
+
     courseArray.forEach(course => {
         targetListElement.innerHTML +=
             `<div class="course-card">
-        <span>${course.completed ? '✔️' : '❌'}</span>
-        <span ><strong>${course.subject} ${course.number}</strong></span>
-        <span class="course-title">${course.title}</span>
-        </div>`;
-        creditCount += course.credits;
+                <span>${course.completed ? '✔️' : '❌'}</span>
+                <span ><strong>${course.subject} ${course.number}</strong></span>
+                <span class="course-title">${course.title}</span>
+            </div>`;
     });
-    targetCreditElement.textContent = creditCount;
+
+    const totalCredits = courseArray.reduce((total, course) => total + course.credits, 0);
+
+    targetCreditElement.textContent = totalCredits;
 }
 
 renderCourses(courses, courseList, credits);
