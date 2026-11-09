@@ -1,0 +1,61 @@
+:root {
+    --primary-color: #232226;
+    --text-white: #fff;
+    --button-color: #E4E4E9;
+    --font-primary: 'Google Sans Flex', sans-serif;
+}
+
+* {
+    font-family: var(--font-primary);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 1rem;
+}
+
+header h1 {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: .5rem;
+}
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+    align-items: center;
+    margin: .5rem;
+    padding: .5rem;
+    border: 1px solid rgb(0 0 0 / 10%);
+    background: #eee;
+}
+
+section h2,
+section p {
+    color: var(--primary-color);
+}
+
+section img {
+    width: auto;
+    max-width: 325px;
+    box-shadow: 0 0 30px #777;
+    height: 200px;
+    border: 1px solid #111;
+}
+
+footer {
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+
+}
