@@ -1,0 +1,61 @@
+/* =========================================
+   TABLET AND UP (768px+)
+========================================= */
+
+@media (min-width: 48rem) {
+
+    :root {
+        --gutter: 3rem;
+    }
+
+    /* Header: logo | links | theme toggle on one row */
+    .header-inner {
+        grid-template-columns: 1fr auto auto;
+        grid-template-areas: "brand nav theme";
+        gap: 1.5rem;
+        padding-block: 0.9rem;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Links always visible, even when JavaScript is on */
+    .js .primary-nav,
+    .js .primary-nav.is-open {
+        display: block;
+    }
+
+    .primary-nav ul {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .primary-nav a {
+        padding: 0.35rem 0;
+        border-top: 0;
+        border-bottom: 2px solid transparent;
+    }
+
+    .primary-nav a:hover {
+        background: none;
+        border-bottom-color: var(--line);
+    }
+
+    .primary-nav a[aria-current="page"] {
+        padding-left: 0;
+        border-left: 0;
+        border-bottom-color: var(--accent);
+    }
+
+    /* Footer: contact | social | credits */
+    .footer-inner {
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        padding-block: 2rem;
+    }
+
+    .footer-credits {
+        text-align: right;
+    }
+}
