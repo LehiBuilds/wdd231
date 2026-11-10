@@ -1,44 +1,28 @@
 :root {
-    /* Design brief palette */
-    /* new: headings, strong UI */
     --primary: #343434;
-
-    /* new: decorative and supporting elements */
     --secondary: #777777;
-
-    /* Background */
     --bg: #F7F6F2;
-
     --text: #252525;
-    /* new: content cards */
     --card: #FFFFFF;
-
-    /* new: card outlines */
     --border: #E8E6E1;
-
     --accent: #2F6F6B;
-    /* new: highlighted sections, tags */
     --accent-light: #D6E9E6;
-
-    /* new: decorative details */
+    --accent-dark: #1F4E4B;
     --bronze: #A88762;
-
-
-    /* header and footer background */
+    --bronze-text: #111111;
+    --silver: #707070;
+    --silver-text: #FFFFFF;
     --surface: #E8E6E1;
-
-    /* secondary text */
     --muted: #5C5C5C;
-
-    /* dividers and hover */
     --line: #D6D3CC;
-
     --link: #1F4E4B;
     --icon-bg: #666;
     --icon-fg: #FFF;
-
     --gutter: 2rem;
     --content-max: 1120px;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-pill: 999px;
 }
 
 [data-theme="dark"] {
@@ -50,8 +34,11 @@
     --border: #3A3835;
     --accent: #6DB5AE;
     --accent-light: #1F3B38;
+    --accent-dark: #A8D8D2;
     --bronze: #C4A47C;
-
+    --bronze-text: #111111;
+    --silver: #B0B0B0;
+    --silver-text: #1C1C1B;
     --surface: #2A2A28;
     --muted: #B6B2AA;
     --line: #43413D;
@@ -291,12 +278,13 @@ main {
 
 h1 {
     color: var(--text);
-    padding: 1rem;
+    padding: 0 1rem;
     text-align: center;
+    margin-bottom: -0.5rem;
 }
 
 .menu {
-    margin: 1rem auto;
+    margin: 0.5rem auto 1rem;
     padding: .5rem;
     text-align: center;
 }
@@ -328,6 +316,124 @@ h1 {
     background-color: var(--accent);
     pointer-events: none;
 
+}
+
+/* ------------- MEMBER CARD ------------- */
+
+.members {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.member-card {
+    overflow: hidden;
+    background-color: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+}
+
+.member-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.7rem 0.8rem 0.55rem;
+    background-color: var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.member-name {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.member-tagline {
+    margin: 0;
+    color: var(--muted);
+}
+
+
+.member-body {
+    display: flex;
+    gap: 0.8rem;
+    padding: 0.8rem;
+}
+
+.member-img {
+    flex: none;
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+}
+
+.member-info {
+    min-width: 0;
+    font-size: 0.85rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+.member-info p {
+    margin: 0;
+}
+
+.member-info a {
+    color: var(--accent-dark);
+}
+
+.badge {
+    display: inline-block;
+    padding: 0 0.6rem;
+    background-color: var(--accent-light);
+    color: var(--accent-dark);
+    border-radius: var(--radius-pill);
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.badge-level-1 {
+    background-color: var(--border);
+    color: var(--primary);
+}
+
+.badge-level-2 {
+    background-color: var(--silver);
+    color: var(--silver-text);
+}
+
+.badge-level-3 {
+    background-color: var(--bronze);
+    color: var(--bronze-text);
+    font-weight: 700;
+}
+
+/* ------------- Grid View ------------- */
+
+.members.grid {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.members.grid .list-only {
+    display: none;
+}
+
+.members.list {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.members.list .member-info {
+    flex: 1;
+}
+
+.members.list .member-desc {
+    margin-bottom: 0.35rem;
 }
 
 /* ------------- FOOTER ------------- */

@@ -8,6 +8,10 @@
         --gutter: 3rem;
     }
 
+    main {
+        max-width: var(--content-max);
+    }
+
     /* Header: logo | links | theme toggle on one row */
     .header-inner {
         grid-template-columns: 1fr auto auto;
@@ -57,5 +61,47 @@
 
     .footer-credits {
         text-align: left;
+    }
+}
+
+@media (min-width: 40rem) {
+    .members.grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 47.5rem) {
+    .members.list .member-card {
+        display: grid;
+        grid-template-columns: 16.25rem minmax(0, 1fr);
+    }
+
+    .members.list .member-head,
+    .members.list .member-body {
+        padding: 1rem;
+    }
+
+    .members.list .member-head {
+        justify-content: center;
+        align-items: flex-start;
+        border-bottom: 0;
+        border-right: 1px solid var(--line);
+        text-align: left;
+    }
+
+    .members.list .member-body {
+        align-items: flex-start;
+    }
+
+    .members.list .member-details {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 1.5rem;
+    }
+}
+
+@media (min-width: 60rem) {
+    .members.grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }

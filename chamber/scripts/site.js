@@ -73,19 +73,18 @@ buttons.forEach(button => {
 /* ---------- Directory Fetch ---------- */
 const membersURL = './data/members.json';
 const levels = { 1: 'Member', 2: 'Silver', 3: 'Gold' };
-
 function memberCard(m) {
     const host = new URL(m.website).hostname.replace('www.', '');
 
     return `
     <li class="member-card">
         <div class="member-head">
-            <h3 class="member-name>${m.name}</h3>
+            <h3 class="member-name">${m.name}</h3>
             <p class="member-tagline">${m.tagline}</p>
         </div>
-        <div class="member-body>
+        <div class="member-body">
             <img class="member-img" src="./images/${m.image}" alt="${m.name}"
-                width="72" height="72" loading="lazy"
+                width="72" height="72" loading="lazy">
             <div class="member-info">
                 <p>
                     <span class="badge list-only">${m.category}</span>
