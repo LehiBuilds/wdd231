@@ -1,6 +1,7 @@
 const root = document.documentElement;
 root.classList.add("js");
 
+
 /* ---------- Mobile menu ---------- */
 
 const menuButton = document.querySelector("#menu-toggle");
@@ -51,8 +52,25 @@ themeButton.addEventListener("click", () => {
     }
 });
 
+/* ---------- Grid/List ---------- */
+const url = './data/members.json';
 
-// Footer Dates
+const display = document.querySelector('article');
+const buttons = document.querySelectorAll('.view-btn')
+
+buttons.forEach(button => {
+
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const viewType = e.target.dataset.view;
+
+        display.classList = viewType;
+
+    });
+});
+
+/* ---------- Footer ---------- */
 
 const year = document.querySelector("#currentYear");
 const today = new Date();

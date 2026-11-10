@@ -26,6 +26,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
     <link rel="stylesheet" href="../styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css">
@@ -64,10 +65,16 @@
 
         </div>
     </header>
-    <!-- ===== COPY TO HERE ===== -->
 
     <main id="main">
-        <!-- Page content goes here -->
+        <h2>Business Directory</h2>
+
+        <div class="menu">
+            <button class="view-btn" data-view="grid"><span class="material-symbols-outlined">grid_view</span></button>
+            <button class="view-btn" data-view="list"><span class="material-symbols-outlined">list</span></button>
+        </div>
+
+        <article class="grid"></article>
     </main>
 
     <footer class="site-footer">
@@ -99,7 +106,6 @@
             </ul>
 
             <div class=" footer-credits">
-                <p>Designed by Lehi Gomez</p>
                 <p>&copy; <span id="currentYear"></span> Mangaldan Chamber of Commerce</p>
                 <p>Last modified: <span id="lastModified"></span></p>
             </div>
