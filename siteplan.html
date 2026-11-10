@@ -12,231 +12,616 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/siteplan.css">
 
-    <title>Site Plan</title>
+    <title>Site Plan | Mangaldan Chamber of Commerce</title>
 
 </head>
 
 <body>
 
-    <header>
-        <h1>Mangaldan Chamber of Commerce</h1>
-        <p>Supporting Local Businesses and Community Growth</p>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav class="site-nav" aria-label="Site plan sections">
+        <div class="container nav-inner">
+            <a class="nav-brand" href="#top">Mangaldan Chamber</a>
+            <ul class="nav-links">
+                <li><a href="#purpose">Purpose</a></li>
+                <li><a href="#goals">Goals</a></li>
+                <li><a href="#personas">Personas</a></li>
+                <li><a href="#scenarios">Scenarios</a></li>
+                <li><a href="#seo">SEO</a></li>
+                <li><a href="#design">Design Brief</a></li>
+                <li><a href="#sitemap">Site Map</a></li>
+                <li><a href="#wireframe-desktop">Wireframes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" id="top">
+        <div class="container hero-inner">
+            <h1>Mangaldan Chamber of Commerce</h1>
+            <p class="hero-tagline">Supporting Local Businesses and Community Growth</p>
+            <p class="hero-meta">Site plan by Lehi Gomez</p>
+        </div>
     </header>
 
-    <main>
+    <main id="main">
 
-        <section>
-            <h2>Site Purpose</h2>
-            <p>
-                This website will serve as a resource hub for businesses in the Town of Mangaldan.
-                The site will provide information on local events, host networking opportunities,
-                create business directories, and encourage local shopping.
-                It aims to promote local economic growth, support local businesses,
-                and foster a sense of community between the businesses.
-            </p>
+        <!-- PURPOSE + TARGET MARKET -->
+        <section class="band" id="purpose" aria-labelledby="purpose-title">
+            <div class="container split">
+                <div class="split-wide">
+                    <h2 id="purpose-title">Site Purpose</h2>
+                    <p class="lead">
+                        This website will serve as a resource hub for businesses in the Town of Mangaldan.
+                        The site will provide information on local events, host networking opportunities,
+                        create business directories, and encourage local shopping.
+                        It aims to promote local economic growth, support local businesses,
+                        and foster a sense of community between the businesses.
+                    </p>
+                </div>
+
+                <aside class="callout" aria-labelledby="market-title">
+                    <h2 id="market-title">Target Market</h2>
+                    <p>
+                        Business owners and patrons in the town of Mangaldan and surrounding areas.
+                    </p>
+                </aside>
+            </div>
         </section>
 
-        <section>
-            <h2>Target Market</h2>
-            <p>
-                Business owners and patrons in the town of Mangaldan and surrounding areas.
-            </p>
+        <!-- GOALS -->
+        <section class="band band-tint" id="goals" aria-labelledby="goals-title">
+            <div class="container">
+                <h2 id="goals-title">Site Goals</h2>
+                <ul class="card-grid goal-grid">
+                    <li class="card goal-card">
+                        Improve member engagement by providing valuable resources and networking opportunities.
+                    </li>
+                    <li class="card goal-card">
+                        Attract new businesses and encourage economic development in the community.
+                    </li>
+                    <li class="card goal-card">
+                        Improve the visibility and reputation of the chamber as a trusted authority in local business matters.
+                    </li>
+                </ul>
+            </div>
         </section>
 
-        <section>
-            <h2>Site Goals</h2>
-            <ul>
-                <li>Improve member engagement by providing valuable resources and networking opportunities.</li>
-                <li>Attract new businesses and encourage economic development in the community.</li>
-                <li>Improve the visibility and reputation of the chamber as a trusted authority in local business matters.</li>
-            </ul>
+        <!-- PERSONAS -->
+        <section class="band" id="personas" aria-labelledby="personas-title">
+            <div class="container">
+                <h2 id="personas-title">User Personas</h2>
+
+                <div class="card-grid persona-grid">
+                    <article class="card persona-card">
+                        <div class="persona-head">
+                            <span class="avatar" aria-hidden="true">MS</span>
+                            <div>
+                                <h3>Small Business Owner</h3>
+                                <p class="persona-name">Maria Santos, 38</p>
+                            </div>
+                        </div>
+                        <p class="tag">Sari-sari Store Owner</p>
+                        <p>
+                            Maria owns a small sari-sari store in Mangaldan, Pangasinan.
+                            She wants to expand her business and attract more customers.
+                            She is looking for information about business programs,
+                            local networking opportunities, and resources that can help
+                            small business owners improve their businesses.
+                        </p>
+                    </article>
+
+                    <article class="card persona-card">
+                        <div class="persona-head">
+                            <span class="avatar" aria-hidden="true">JM</span>
+                            <div>
+                                <h3>Aspiring Entrepreneur</h3>
+                                <p class="persona-name">John Mark Dela Cruz, 26</p>
+                            </div>
+                        </div>
+                        <p class="tag">Young Entrepreneur</p>
+                        <p>
+                            John Mark is a young resident of Mangaldan who plans to start
+                            his own food business. He wants to learn about business
+                            opportunities, local market demands, permits, and available
+                            support for new entrepreneurs. He visits the chamber website
+                            to find useful information and connect with established
+                            business owners in the community.
+                        </p>
+                    </article>
+
+                    <article class="card persona-card">
+                        <div class="persona-head">
+                            <span class="avatar" aria-hidden="true">AR</span>
+                            <div>
+                                <h3>Local Resident and Consumer</h3>
+                                <p class="persona-name">Ana Reyes, 32</p>
+                            </div>
+                        </div>
+                        <p class="tag">Public School Teacher</p>
+                        <p>
+                            Ana is a resident of Mangaldan who wants to support local
+                            business in her community. She visits the chamber website
+                            to discover nearby shops, restaurants, services, and upcoming
+                            community events. She prefers finding reliable local business
+                            information in one convenient place.
+                        </p>
+                    </article>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>User Personas</h2>
+        <!-- SCENARIOS -->
+        <section class="band band-tint" id="scenarios" aria-labelledby="scenarios-title">
+            <div class="container">
+                <h2 id="scenarios-title">Scenarios</h2>
 
-            <article>
-                <h3>Small Business Owner</h3>
-                <p><strong>Name:</strong> Maria Santos</p>
-                <p><strong>Age:</strong> 38</p>
-                <p><strong>Occupation:</strong> Sari-sari Store Owner</p>
-                <p>
-                    Maria owns a small sari-sari store in Mangaldan, Pangasinan.
-                    She wants to expand her business and attract more customers.
-                    She is looking for information about business programs,
-                    local networking opportunities, and resources that can help
-                    small business owners improve their businesses.
+                <div class="card-grid scenario-grid">
+                    <article class="card scenario-card">
+                        <h3>Maria Santos</h3>
+                        <p>
+                            A small business owner in Mangaldan wants to grow her sari-sari store and attract more customers. She visits
+                            the Chamber of Commerce website to learn about membership
+                            benefits, business networking opportunities, and programs
+                            that support small local business.
+                        </p>
+                    </article>
+
+                    <article class="card scenario-card">
+                        <h3>John Mark Dela Cruz</h3>
+                        <p>
+                            A young resident of Mangaldan plans to start a small
+                            food business but does not know where to begin. He visits
+                            the website to find information about local business
+                            opportunities, entrepreneurship resources, and upcoming
+                            business seminars or workshops.
+                        </p>
+                    </article>
+
+                    <article class="card scenario-card">
+                        <h3>Ana Reyes</h3>
+                        <p>
+                            A local resident wants to support business within
+                            Mangaldan instead of always shopping in nearby cities.
+                            She visits the website to explore the business directory,
+                            discover local shops and restaurants, and find upcoming
+                            community events.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO -->
+        <section class="band" id="seo" aria-labelledby="seo-title">
+            <div class="container">
+                <h2 id="seo-title">SEO Plan</h2>
+                <ul class="seo-grid">
+                    <li>Use relevant keywords in site descriptions, content, and blog posts.</li>
+                    <li>Verify the site on Google's Business Profile.</li>
+                    <li>Get inbound links or backlinks from all member businesses to improve rankings.</li>
+                    <li>Embed Google Analytics in all site pages.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- DESIGN BRIEF -->
+        <section class="band band-tint" id="design" aria-labelledby="design-title">
+            <div class="container">
+                <h2 id="design-title">Design Brief</h2>
+
+                <h3 class="sub-title">Color Palette</h3>
+
+                <div class="swatch-grid">
+                    <div class="swatch sw-primary">
+                        <strong class="swatch-hex">#343434</strong>
+                        <span class="swatch-name">Primary: Charcoal</span>
+                        <span class="swatch-role">Navigation and main elements</span>
+                    </div>
+
+                    <div class="swatch sw-secondary">
+                        <strong class="swatch-hex">#777777</strong>
+                        <span class="swatch-name">Secondary: Medium Gray</span>
+                        <span class="swatch-role">Supporting elements</span>
+                    </div>
+
+                    <div class="swatch sw-background">
+                        <strong class="swatch-hex">#F7F6F2</strong>
+                        <span class="swatch-name">Background: Warm White</span>
+                        <span class="swatch-role">Main page background</span>
+                    </div>
+
+                    <div class="swatch sw-text">
+                        <strong class="swatch-hex">#252525</strong>
+                        <span class="swatch-name">Text: Soft Black</span>
+                        <span class="swatch-role">Headings and body text</span>
+                    </div>
+
+                    <div class="swatch sw-card">
+                        <strong class="swatch-hex">#FFFFFF</strong>
+                        <span class="swatch-name">Card: White</span>
+                        <span class="swatch-role">Content areas</span>
+                    </div>
+
+                    <div class="swatch sw-border">
+                        <strong class="swatch-hex">#E8E6E1</strong>
+                        <span class="swatch-name">Border: Warm Gray</span>
+                        <span class="swatch-role">Dividers and card outlines</span>
+                    </div>
+
+                    <div class="swatch sw-accent">
+                        <strong class="swatch-hex">#2F6F6B</strong>
+                        <span class="swatch-name">Accent: Deep Teal</span>
+                        <span class="swatch-role">Buttons, links, and highlights</span>
+                    </div>
+
+                    <div class="swatch sw-accent-bg">
+                        <strong class="swatch-hex">#D6E9E6</strong>
+                        <span class="swatch-name">Accent Background: Light Teal</span>
+                        <span class="swatch-role">Highlighted sections</span>
+                    </div>
+
+                    <div class="swatch sw-bronze">
+                        <strong class="swatch-hex">#A88762</strong>
+                        <span class="swatch-name">Optional Accent: Muted Bronze</span>
+                        <span class="swatch-role">Decorative details</span>
+                    </div>
+                </div>
+
+                <div class="brief-split">
+                    <div class="brief-col">
+                        <h3 class="sub-title">Typography</h3>
+                        <p class="font-line"><strong>Font Family:</strong> Google Sans Flex</p>
+
+                        <div class="type-sample">
+                            <h1>Business Growth Starts Here.</h1>
+                            <h2>Supporting Local Businesses</h2>
+                            <p>
+                                Connecting entrepreneurs, supporting local businesses,
+                                and building economic opportunities in Mangaldan, Pangasinan.
+                            </p>
+                            <small>Sample small text and supporting information.</small>
+                        </div>
+                    </div>
+
+                    <div class="brief-col">
+                        <h3 class="sub-title">Button Styles</h3>
+
+                        <div class="button-samples">
+                            <button type="button" class="btn btn-primary">Primary Button</button>
+                            <button type="button" class="btn btn-secondary">Secondary Button</button>
+                            <button type="button" class="btn btn-accent">Accent Button</button>
+                        </div>
+
+                        <h3 class="sub-title">Content Card Sample</h3>
+
+                        <div class="design-card">
+                            <h4>Local Business Directory</h4>
+                            <p>
+                                Discover local shops, restaurants, and services
+                                within the community of Mangaldan.
+                            </p>
+                            <button type="button" class="btn btn-accent">Explore Businesses</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SITE MAP -->
+        <section class="band" id="sitemap" aria-labelledby="sitemap-title">
+            <div class="container">
+                <h2 id="sitemap-title">Site Map</h2>
+
+                <div class="sitemap-wrap">
+                    <ul class="sitemap">
+                        <li><span class="sitemap-box">Home</span></li>
+                        <li><span class="sitemap-box">Discover</span></li>
+                        <li><span class="sitemap-box">Business Directory</span></li>
+                        <li><span class="sitemap-box">Join</span></li>
+                        <li class="is-later"><span class="sitemap-box">About</span></li>
+                        <li class="is-later"><span class="sitemap-box">Podcast</span></li>
+                        <li class="is-later"><span class="sitemap-box">Events</span></li>
+                    </ul>
+                </div>
+
+                <ul class="sitemap-legend">
+                    <li><span class="legend-key"></span>Launch pages</li>
+                    <li><span class="legend-key is-later"></span>Added after launch</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- WIREFRAME: DESKTOP -->
+        <section class="band band-tint" id="wireframe-desktop" aria-labelledby="wfd-title">
+            <div class="container">
+                <h2 id="wfd-title">Wireframe: Desktop</h2>
+                <p class="wf-intro">
+                    The Directory page at desktop width. Business names and contact details are sample content.
                 </p>
-            </article>
 
-            <article>
-                <h3>Aspiring Entrepreneur</h3>
-                <p><strong>Name:</strong> John Mark Dela Cruz</p>
-                <p><strong>Age:</strong> 26</p>
-                <p><strong>Occupation:</strong> Young Entrepreneur</p>
-                <p>
-                    John Mark is a young resident of Mangaldan who plans to start
-                    his own food business. He wants to learn about business
-                    opportunities, local market demands, permits, and available
-                    support for new entrepreneurs. He visits the chamber website
-                    to find useful information and connect with established
-                    business owners in the community.
-                </p>
-            </article>
+                <div class="wf-scroll" tabindex="0" role="region" aria-label="Desktop wireframe, scrolls sideways on small screens">
+                    <div class="wf-browser" role="img" aria-label="Desktop wireframe of the Directory page: header with logo and links, a Grid and List toggle, three rows of three business cards, and a footer with contact details and social links.">
+                        <div class="wf-chrome">
+                            <span class="wf-dot"></span><span class="wf-dot"></span><span class="wf-dot"></span>
+                            <span class="wf-url">mangaldanchamber.example/directory</span>
+                        </div>
 
-            <article>
-                <h3>Local Resident and Consumer</h3>
-                <p><strong>Name:</strong> Ana Reyes</p>
-                <p><strong>Age:</strong> 32</p>
-                <p><strong>Occupation:</strong> Public School Teacher</p>
-                <p>
-                    Ana is a resident of Mangaldan who wants to support local
-                    business in her community. She visits the chamber website
-                    to discover nearby shops, restaurants, services, and upcoming
-                    community events. She prefers finding reliable local business
-                    information in one convenient place.
-                </p>
-            </article>
+                        <div class="wf-site">
+                            <div class="wf-header">
+                                <div class="wf-brand">
+                                    <span class="wf-img wf-logo"></span>
+                                    <span>Mangaldan Chamber of Commerce</span>
+                                </div>
+                                <div class="wf-nav">
+                                    <span>Home</span>
+                                    <span class="is-current">Directory</span>
+                                    <span>Join</span>
+                                    <span>Discover</span>
+                                    <span class="wf-contrast"></span>
+                                </div>
+                            </div>
+
+                            <div class="wf-main">
+                                <div class="wf-title">Directory</div>
+                                <div class="wf-toggle"><span class="is-active">Grid</span><span>List</span></div>
+
+                                <ul class="wf-grid">
+                                    <li class="wf-card">
+                                        <div class="wf-card-head">
+                                            <span class="wf-card-name">Santos Sari-sari Store</span>
+                                            <span class="wf-card-tag">Everyday needs, close to home</span>
+                                        </div>
+                                        <div class="wf-card-body">
+                                            <span class="wf-img"></span>
+                                            <div class="wf-details">
+                                                <p><strong>Email:</strong> info@business.example</p>
+                                                <p><strong>Phone:</strong> 0917 555 0123</p>
+                                                <p><strong>URL:</strong> business.example</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="wf-card">
+                                        <div class="wf-card-head">
+                                            <span class="wf-card-name">Dela Cruz Eatery</span>
+                                            <span class="wf-card-tag">Home-style Pangasinan meals</span>
+                                        </div>
+                                        <div class="wf-card-body">
+                                            <span class="wf-img"></span>
+                                            <div class="wf-details">
+                                                <p><strong>Email:</strong> info@business.example</p>
+                                                <p><strong>Phone:</strong> 0917 555 0123</p>
+                                                <p><strong>URL:</strong> business.example</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="wf-card">
+                                        <div class="wf-card-head">
+                                            <span class="wf-card-name">Reyes Print &amp; Copy</span>
+                                            <span class="wf-card-tag">Fast printing for school and office</span>
+                                        </div>
+                                        <div class="wf-card-body">
+                                            <span class="wf-img"></span>
+                                            <div class="wf-details">
+                                                <p><strong>Email:</strong> info@business.example</p>
+                                                <p><strong>Phone:</strong> 0917 555 0123</p>
+                                                <p><strong>URL:</strong> business.example</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="wf-card">
+                                        <div class="wf-card-head">
+                                            <span class="wf-card-name">Mangaldan Bakeshop</span>
+                                            <span class="wf-card-tag">Fresh pandesal every morning</span>
+                                        </div>
+                                        <div class="wf-card-body">
+                                            <span class="wf-img"></span>
+                                            <div class="wf-details">
+                                                <p><strong>Email:</strong> info@business.example</p>
+                                                <p><strong>Phone:</strong> 0917 555 0123</p>
+                                                <p><strong>URL:</strong> business.example</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="wf-card">
+                                        <div class="wf-card-head">
+                                            <span class="wf-card-name">Bulaklak Flower Shop</span>
+                                            <span class="wf-card-tag">Blooms for every occasion</span>
+                                        </div>
+                                        <div class="wf-card-body">
+                                            <span class="wf-img"></span>
+                                            <div class="wf-details">
+                                                <p><strong>Email:</strong> info@business.example</p>
+                                                <p><strong>Phone:</strong> 0917 555 0123</p>
+                                                <p><strong>URL:</strong> business.example</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="wf-card">
+                                        <div class="wf-card-head">
+                                            <span class="wf-card-name">Aling Rosa Market</span>
+                                            <span class="wf-card-tag">Fresh produce and groceries</span>
+                                        </div>
+                                        <div class="wf-card-body">
+                                            <span class="wf-img"></span>
+                                            <div class="wf-details">
+                                                <p><strong>Email:</strong> info@business.example</p>
+                                                <p><strong>Phone:</strong> 0917 555 0123</p>
+                                                <p><strong>URL:</strong> business.example</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="wf-card">
+                                        <div class="wf-card-head">
+                                            <span class="wf-card-name">Pangasinan Hardware</span>
+                                            <span class="wf-card-tag">Tools and building supplies</span>
+                                        </div>
+                                        <div class="wf-card-body">
+                                            <span class="wf-img"></span>
+                                            <div class="wf-details">
+                                                <p><strong>Email:</strong> info@business.example</p>
+                                                <p><strong>Phone:</strong> 0917 555 0123</p>
+                                                <p><strong>URL:</strong> business.example</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="wf-card">
+                                        <div class="wf-card-head">
+                                            <span class="wf-card-name">Bangus Corner</span>
+                                            <span class="wf-card-tag">Fresh and smoked bangus</span>
+                                        </div>
+                                        <div class="wf-card-body">
+                                            <span class="wf-img"></span>
+                                            <div class="wf-details">
+                                                <p><strong>Email:</strong> info@business.example</p>
+                                                <p><strong>Phone:</strong> 0917 555 0123</p>
+                                                <p><strong>URL:</strong> business.example</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="wf-card">
+                                        <div class="wf-card-head">
+                                            <span class="wf-card-name">Dizon Auto Care</span>
+                                            <span class="wf-card-tag">Honest repairs, fair prices</span>
+                                        </div>
+                                        <div class="wf-card-body">
+                                            <span class="wf-img"></span>
+                                            <div class="wf-details">
+                                                <p><strong>Email:</strong> info@business.example</p>
+                                                <p><strong>Phone:</strong> 0917 555 0123</p>
+                                                <p><strong>URL:</strong> business.example</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="wf-footer">
+                                <div>
+                                    <p><strong>Mangaldan Chamber of Commerce</strong></p>
+                                    <p>Poblacion, Mangaldan, Pangasinan</p>
+                                    <p>info@mangaldanchamber.example</p>
+                                    <p>0917 555 0100</p>
+                                </div>
+                                <div class="wf-social"><span>YT</span><span>FB</span><span>in</span></div>
+                                <div>
+                                    <p>Site plan by Lehi Gomez</p>
+                                    <p>&copy; 2026 Mangaldan Chamber of Commerce</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="wf-notes">
+                    <li><strong>Header</strong>Logo and name on the left, page links on the right, with the current page underlined.</li>
+                    <li><strong>Grid and List toggle</strong>Switches between a three-column grid and a single-column list.</li>
+                    <li><strong>Business cards</strong>Each card shows the name, tag line, photo, email, phone, and website.</li>
+                    <li><strong>Footer</strong>Chamber contact details, social links, and copyright.</li>
+                </ul>
+            </div>
         </section>
 
-        <section>
-            <h2>Scenarios</h2>
-            <ol>
-                <li>
-                    A small business owner in Mangaldan wants to grow her sari-sari store and attract more customers. She visits
-                    the Chamber of Commerce website to learn about membership
-                    benefits, business networking opportunities, and programs
-                    that support small local business.
-                </li>
-
-                <li>
-                    A young resident of Mangaldan plans to start a small
-                    food business but does not know where to begin. He visits
-                    the website to find information about local business
-                    opportunities, entrepreneurship resources, and upcoming
-                    business seminars or workshops.
-                </li>
-
-
-                <li>
-                    A local resident wants to support business within
-                    Mangaldan instead of always shopping in nearby cities.
-                    She visits the website to explore the business directory,
-                    discover local shops and restaurants, and find upcoming
-                    community events.
-                </li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>SEO Plan</h2>
-            <ul>
-                <li>Use relevant keywords in site descriptions, content, and blog posts.</li>
-                <li>Verify the site on Google's Business Profile.</li>
-                <li>Get inbound links or backlinks from all member businesses to improve rankings.</li>
-                <li>Embed Google Analytics in all site pages.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Design Brief</h2>
-
-            <h3>Color Palette</h3>
-
-            <p><strong>Primary Color:</strong> #343434 (Charcoal)</p>
-            <div class="color-swatch primary-swatch">
-                <span>#343434</span>
-                <span>Primary - Navigation and main elements</span>
-            </div>
-
-            <p><strong>Secondary Color:</strong> #777777 (Medium Gray)</p>
-            <div class="color-swatch secondary-swatch">
-                <span>#777777</span>
-                <span>Secondary - Supporting elements</span>
-            </div>
-
-            <p><strong>Background Color:</strong> #F7F6F2 (Warm White)</p>
-            <div class="color-swatch background-swatch">
-                <span>#F7F6F2</span>
-                <span>Background - Main page background</span>
-            </div>
-
-            <p><strong>Text Color:</strong> #252525 (Soft Black)</p>
-            <div class="color-swatch text-swatch">
-                <span>#252525</span>
-                <span>Text - Headings and body text</span>
-            </div>
-
-            <p><strong>Card Color:</strong> #FFFFFF (White)</p>
-            <div class="color-swatch card-swatch">
-                <span>#FFFFFF</span>
-                <span>Cards - Content areas</span>
-            </div>
-
-            <p><strong>Border Color:</strong> #E8E6E1 (Warm Gray)</p>
-            <div class="color-swatch border-swatch">
-                <span>#E8E6E1</span>
-                <span>Borders - Dividers and card outlines</span>
-            </div>
-
-            <p><strong>Accent Color:</strong> #829477 (Sage Green)</p>
-            <div class="color-swatch accent-swatch">
-                <span>#829477</span>
-                <span>Accent - Buttons, links, and highlights</span>
-            </div>
-
-            <p><strong>Accent Background:</strong> #DCE5D6 (Light Sage)</p>
-            <div class="color-swatch accent-bg-swatch">
-                <span>#DCE5D6</span>
-                <span>Accent Background - Highlighted sections</span>
-            </div>
-
-            <p><strong>Optional Accent:</strong> #A88762 (Muted Bronze)</p>
-            <div class="color-swatch optional-accent-swatch">
-                <span>#A88762</span>
-                <span>Optional - Decorative details</span>
-            </div>
-
-            <h3>Typography</h3>
-
-            <p><strong>Font Family:</strong> Google Sans Flex</p>
-
-            <div class="typography-sample">
-                <h1>Business Growth Starts Here.</h1>
-                <h2>Supporting Local Businesses</h2>
-                <p>
-                    Connecting entrepreneurs, supporting local businesses,
-                    and building economic opportunities in Mangaldan, Pangasinan.
+        <!-- WIREFRAME: MOBILE -->
+        <section class="band" id="wireframe-mobile" aria-labelledby="wfm-title">
+            <div class="container">
+                <h2 id="wfm-title">Wireframe: Mobile</h2>
+                <p class="wf-intro">
+                    The same Directory page on a phone. Business names and contact details are sample content.
                 </p>
-                <small>Sample small text and supporting information.</small>
-            </div>
 
-            <h3>Button Styles</h3>
+                <div class="wf-mobile-layout">
+                    <div class="wf-stage">
+                        <div class="wf-phone" role="img" aria-label="Mobile wireframe of the Directory page: header with logo, light and dark toggle and menu button, a Grid and List toggle, three stacked business cards, and a footer with contact details and social links.">
+                            <div class="wf-status"><span>9:41</span><span class="wf-battery"></span></div>
 
-            <div class="button-samples">
-                <button class="btn-primary">Primary Button</button>
-                <button class="btn-secondary">Secondary Button</button>
-                <button class="btn-accent">Accent Button</button>
-            </div>
+                            <div class="wf-m-header">
+                                <span class="wf-img wf-logo"></span>
+                                <span class="wf-m-brand">Mangaldan Chamber of Commerce</span>
+                                <span class="wf-contrast"></span>
+                                <span class="wf-burger"><span></span><span></span><span></span></span>
+                            </div>
 
-            <h3>Content Card Sample</h3>
+                            <div class="wf-m-body">
+                                <div class="wf-title">Directory</div>
+                                <div class="wf-toggle"><span class="is-active">Grid</span><span>List</span></div>
 
-            <div class="design-card">
-                <h3>Local Business Directory</h3>
-                <p>
-                    Discover local shops, restaurants, and services
-                    within the community of Mangaldan.
-                </p>
-                <button class="btn-accent">Explore Businesses</button>
+                                <ul class="wf-m-cards">
+                                    <li class="wf-card">
+                                        <div class="wf-card-head">
+                                            <span class="wf-card-name">Santos Sari-sari Store</span>
+                                            <span class="wf-card-tag">Everyday needs, close to home</span>
+                                        </div>
+                                        <div class="wf-card-body">
+                                            <span class="wf-img"></span>
+                                            <div class="wf-details">
+                                                <p><strong>Email:</strong> info@business.example</p>
+                                                <p><strong>Phone:</strong> 0917 555 0123</p>
+                                                <p><strong>URL:</strong> business.example</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="wf-card">
+                                        <div class="wf-card-head">
+                                            <span class="wf-card-name">Dela Cruz Eatery</span>
+                                            <span class="wf-card-tag">Home-style Pangasinan meals</span>
+                                        </div>
+                                        <div class="wf-card-body">
+                                            <span class="wf-img"></span>
+                                            <div class="wf-details">
+                                                <p><strong>Email:</strong> info@business.example</p>
+                                                <p><strong>Phone:</strong> 0917 555 0123</p>
+                                                <p><strong>URL:</strong> business.example</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="wf-card">
+                                        <div class="wf-card-head">
+                                            <span class="wf-card-name">Reyes Print &amp; Copy</span>
+                                            <span class="wf-card-tag">Fast printing for school and office</span>
+                                        </div>
+                                        <div class="wf-card-body">
+                                            <span class="wf-img"></span>
+                                            <div class="wf-details">
+                                                <p><strong>Email:</strong> info@business.example</p>
+                                                <p><strong>Phone:</strong> 0917 555 0123</p>
+                                                <p><strong>URL:</strong> business.example</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="wf-m-footer">
+                                <p><strong>Mangaldan Chamber of Commerce</strong></p>
+                                <p>Poblacion, Mangaldan, Pangasinan</p>
+                                <p>info@mangaldanchamber.example</p>
+                                <p>0917 555 0100</p>
+                                <div class="wf-social"><span>YT</span><span>FB</span><span>in</span></div>
+                                <p>Site plan by Lehi Gomez</p>
+                                <p>&copy; 2026 Mangaldan Chamber of Commerce</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="wf-notes wf-notes-stack">
+                        <li><strong>Menu button</strong>The page links collapse into a menu button to save space.</li>
+                        <li><strong>Light and dark toggle</strong>Stays in the header so it is always within reach.</li>
+                        <li><strong>One-column cards</strong>Cards stack with the photo on the left and contact details on the right.</li>
+                        <li><strong>Footer</strong>Contact details, social links, and copyright stack in one column.</li>
+                    </ul>
+                </div>
             </div>
         </section>
-
 
     </main>
 
-    <footer>
-        <p>Mangaldan Chamber of Commerce</p>
-        <p>Supporting Local Businesses and Community Growth</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p class="footer-title">Mangaldan Chamber of Commerce</p>
+            <p>Supporting Local Businesses and Community Growth</p>
+        </div>
     </footer>
 
 </body>
