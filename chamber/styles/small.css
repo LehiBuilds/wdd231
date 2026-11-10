@@ -1,10 +1,38 @@
 :root {
+    /* Design brief palette */
+    /* new: headings, strong UI */
+    --primary: #343434;
+
+    /* new: decorative and supporting elements */
+    --secondary: #777777;
+
+    /* Background */
     --bg: #F7F6F2;
-    --surface: #E8E6E1;
+
     --text: #252525;
-    --muted: #5C5C5C;
-    --line: #D6D3CC;
+    /* new: content cards */
+    --card: #FFFFFF;
+
+    /* new: card outlines */
+    --border: #E8E6E1;
+
     --accent: #2F6F6B;
+    /* new: highlighted sections, tags */
+    --accent-light: #D6E9E6;
+
+    /* new: decorative details */
+    --bronze: #A88762;
+
+
+    /* header and footer background */
+    --surface: #E8E6E1;
+
+    /* secondary text */
+    --muted: #5C5C5C;
+
+    /* dividers and hover */
+    --line: #D6D3CC;
+
     --link: #1F4E4B;
     --icon-bg: #666;
     --icon-fg: #FFF;
@@ -14,12 +42,19 @@
 }
 
 [data-theme="dark"] {
+    --primary: #F2F0EB;
+    --secondary: #A3A09A;
     --bg: #1C1C1B;
-    --surface: #2A2A28;
     --text: #EDEBE6;
+    --card: #242423;
+    --border: #3A3835;
+    --accent: #6DB5AE;
+    --accent-light: #1F3B38;
+    --bronze: #C4A47C;
+
+    --surface: #2A2A28;
     --muted: #B6B2AA;
     --line: #43413D;
-    --accent: #6DB5AE;
     --link: #8FCFC8;
     --icon-bg: #D6D3CC;
     --icon-fg: #1C1C1B;
@@ -246,6 +281,54 @@ button:focus-visible {
     font-weight: 700;
 }
 
+/* ------------- Main View ------------- */
+
+main {
+    margin: 0 auto;
+    padding: 0.5rem;
+    max-width: 700px;
+}
+
+h1 {
+    color: var(--text);
+    padding: 1rem;
+    text-align: center;
+}
+
+.menu {
+    margin: 1rem auto;
+    padding: .5rem;
+    text-align: center;
+}
+
+.view-btn {
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.view-btn:hover {
+    background-color: var(--accent-light);
+    cursor: pointer;
+}
+
+.view-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.view-btn.active {
+    transform: scale(.95);
+}
+
+.view-btn.active {
+    color: var(--surface);
+    background-color: var(--accent);
+    pointer-events: none;
+
+}
 
 /* ------------- FOOTER ------------- */
 
@@ -296,4 +379,3 @@ button:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
 }
-

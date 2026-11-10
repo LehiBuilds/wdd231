@@ -63,12 +63,23 @@ buttons.forEach(button => {
     button.addEventListener('click', (e) => {
         e.preventDefault();
 
-        const viewType = e.target.dataset.view;
+        const viewType = e.currentTarget.dataset.view;
 
+        //safe class swapping
+        display.classList.remove('grid', 'list');
         display.classList = viewType;
+
+        // Buttons active state management
+        buttons.forEach(btn => btn.classList.remove('active'));
+        e.currentTarget.classList.add('active');
+
+
 
     });
 });
+
+/* ---------- Grid/List ---------- */
+
 
 /* ---------- Footer ---------- */
 
