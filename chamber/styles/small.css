@@ -68,6 +68,9 @@ body {
 
 main {
     flex: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0.5rem;
 }
 
 ul {
@@ -270,12 +273,6 @@ button:focus-visible {
 
 /* ------------- Main View ------------- */
 
-main {
-    margin: 0 auto;
-    padding: 0.5rem;
-    max-width: 700px;
-}
-
 h1 {
     color: var(--text);
     padding: 0 1rem;
@@ -309,13 +306,9 @@ h1 {
 
 .view-btn.active {
     transform: scale(.95);
-}
-
-.view-btn.active {
     color: var(--surface);
     background-color: var(--accent);
     pointer-events: none;
-
 }
 
 /* ------------- MEMBER CARD ------------- */
