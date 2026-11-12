@@ -1,0 +1,95 @@
+:root {
+    --primary: #343434;
+    --secondary: #777777;
+    --bg: #F7F6F2;
+    --text: #252525;
+    --card: #FFFFFF;
+    --border: #E8E6E1;
+    --accent: #2F6F6B;
+    --accent-light: #D6E9E6;
+    --accent-dark: #1F4E4B;
+    --bronze: #A88762;
+    --bronze-text: #111111;
+    --silver: #707070;
+    --silver-text: #FFFFFF;
+    --surface: #E8E6E1;
+    --muted: #5C5C5C;
+    --line: #D6D3CC;
+    --link: #1F4E4B;
+    --icon-bg: #666;
+    --icon-fg: #FFF;
+    --gutter: 2rem;
+    --content-max: 1120px;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-pill: 999px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    height: 100vh;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    color: var(--primary);
+}
+
+header,
+main,
+footer {
+    margin: 1rem auto;
+    text-align: center;
+    width: 100%;
+}
+
+p,
+figcaption {
+    font-size: 1.5rem;
+}
+
+main {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+
+main span {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+figure img {
+    background-color: var(--icon-bg);
+    border-radius: 8px;
+    width: 98px;
+    height: 98px;
+    align-self: center;
+}
+
+figcaption {
+    text-transform: capitalize;
+}
+
+footer {
+    font-size: 1.2rem;
+    padding: 1rem;
+}
