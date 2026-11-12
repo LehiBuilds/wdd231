@@ -1,0 +1,142 @@
+:root {
+    --primary: #1E293B;
+    --secondary: #64748B;
+    --bg: #F0F5FA;
+    --text: #1E293B;
+    --card: #FFFFFF;
+    --border: #E2E8F0;
+    --accent: #0284C7;
+    --accent-light: #E0F2FE;
+    --gutter: 1.25rem;
+    --radius-md: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 2rem var(--gutter);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Google Sans Flex', sans-serif;
+    color: var(--primary);
+    background: linear-gradient(160deg,
+            #DCEEFF 0%,
+            #F0F5FA 45%,
+            #FFFFFF 100%);
+}
+
+header {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #1E3A5F;
+}
+
+main {
+    width: 100%;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: var(--radius-md);
+    box-shadow: 0 12px 35px rgba(30, 58, 95, 0.08);
+}
+
+main p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--secondary);
+}
+
+main span {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    color: var(--accent);
+}
+
+figure {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+figure img {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    background: var(--accent-light);
+    border-radius: 50%;
+    padding: 0.75rem;
+}
+
+figcaption {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--primary);
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--secondary);
+}
+
+/* Small mobile screens */
+@media screen and (max-width: 360px) {
+    body {
+        padding: 1.25rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    main {
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
+
+    main span {
+        font-size: 2.8rem;
+    }
+
+    figure img {
+        width: 110px;
+        height: 110px;
+    }
+
+    figcaption {
+        font-size: 1.1rem;
+    }
+}
