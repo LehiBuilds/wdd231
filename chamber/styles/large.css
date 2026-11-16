@@ -119,11 +119,6 @@
     .home-page .hero {
         width: 100%;
         min-height: clamp(38rem, 58vw, 46rem);
-        border-radius: 0;
-    }
-
-    .home-page .hero-image {
-        border-radius: 0;
     }
 
     .home-page .hero-image img {
@@ -143,14 +138,7 @@
     }
 
     .home-page .hero-content {
-        align-self: stretch;
-        display: grid;
-        grid-template-rows: auto minmax(0, 1fr) auto auto;
-        justify-items: center;
-        max-width: none;
-        min-height: inherit;
         padding: clamp(3rem, 6vw, 5rem) clamp(3rem, 8vw, 7rem);
-        text-align: center;
     }
 
     .home-page .eyebrow {
@@ -159,9 +147,6 @@
     }
 
     .home-page .hero h1 {
-        align-self: center;
-        justify-self: center;
-        max-width: 12ch;
         font-size: clamp(4.4rem, 7.3vw, 6.6rem);
     }
 
@@ -197,7 +182,6 @@
     }
 
     .home-page #weather-summary {
-        grid-template-columns: auto auto minmax(0, 1fr);
         padding: 1rem;
     }
 
@@ -206,7 +190,6 @@
     }
 
     .home-page #forecast-list {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
     }
 
@@ -251,7 +234,6 @@
     }
 
     .home-page .highlight img {
-        width: 100%;
         height: auto;
         min-height: 0;
         aspect-ratio: 4 / 3;
