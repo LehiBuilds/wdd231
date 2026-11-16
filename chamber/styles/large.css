@@ -105,3 +105,31 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
+
+
+/* 
+
+@media (min-width: 48rem) {
+    .home-page {
+        padding-top: 1.5rem;
+    }
+
+    .home-page .hero {
+        grid-template-columns: 1.2fr 1fr;
+        align-items: center;
+    }
+
+    .home-page .hero__content {
+        padding: 2rem;
+    }
+
+    .home-page .info-grid {
+        grid-template-columns: 1.35fr 0.95fr;
+    }
+
+    .home-page .highlights__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+*/

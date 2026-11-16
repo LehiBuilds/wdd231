@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lehi Gomez">
+    <meta name="description" content="Discover local businesses, shops, restaurants, and services in Mangaldan, Pangasinan. Connect with the Mangaldan Chamber of Commerce and support the local community.">
+    <meta name="keywords" content="Mangaldan Chamber of Commerce, local businesses, Mangaldan Pangasinan, shops, restaurants, services, community directory">
+    <link rel="canonical" href="https://lehibuilds.github.io/wdd231/chamber/home.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mangaldan Chamber of Commerce">
+    <meta property="og:title" content="Mangaldan Chamber of Commerce | Home">
+    <meta property="og:description" content="Explore local shops, businesses, and services in Mangaldan, Pangasinan.">
+    <meta property="og:url" content="https://lehibuilds.github.io/wdd231/chamber/home.html">
+    <meta property="og:image" content="https://lehibuilds.github.io/wdd231/chamber/images/mangaldan-town.jpg">
+    <meta property="og:image:alt" content="Mangaldan community and local businesses">
+    <meta property="og:locale" content="en_PH">
+
+    <!-- X (Twitter) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mangaldan Chamber of Commerce | Home">
+    <meta name="twitter:description" content="Discover local businesses and services in Mangaldan, Pangasinan.">
+    <meta name="twitter:image" content="https://lehibuilds.github.io/wdd231/chamber/images/mangaldan-town.jpg">
+    <meta name="theme-color" content="#0b3d2e">
+
+    <title>Mangaldan Chamber of Commerce</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <link rel="icon" href="./images/favicon.ico">
+    <script src="./scripts/site.js" defer></script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-inner">
+
+            <a class="brand" href="index.html">
+                <img src="./images/logo.svg" alt="" width="44" height="44">
+                <span class="brand-name">Mangaldan Chamber of Commerce</span>
+            </a>
+
+            <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+                <span class="menu-bars" aria-hidden="true"></span>
+            </button>
+
+            <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+            </nav>
+
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Dark mode">
+                <span class="theme-icon" aria-hidden="true"></span>
+            </button>
+
+        </div>
+    </header>
+
+    <main id="main" class="home-page">
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">Supporting local business growth</p>
+                <h1>Grow with Mangaldan</h1>
+                <p>
+                    Discover trusted businesses, connect with local leaders, and support the
+                    community through the Mangaldan Chamber of Commerce.
+                </p>
+                <div class="hero-actions">
+                    <a class="button button--primary" href="join.html">Join the Chamber</a>
+                    <a class="button button--secondary" href="directory.html">Browse Members</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="images/mangaldan-town.webp" alt="Mangaldan town center and local businesses">
+            </div>
+        </section>
+
+        <section class="info-grid">
+            <article class="card card--event">
+                <h2>Current Events</h2>
+                <ul>
+                    <li>
+                        <strong>Business Networking Mixer</strong><br>
+                        Friday, 5:00 PM<br>
+                        Town Plaza
+                    </li>
+                    <li>
+                        <strong>Local Market Day</strong><br>
+                        Saturday, 8:00 AM<br>
+                        Mangaldan Public Market
+                    </li>
+                </ul>
+            </article>
+
+            <article class="card card--weather">
+                <h2>Weather</h2>
+                <div class="weather-summary">
+                    <span class="weather-temp">31°C</span>
+                    <span class="weather-condition">Partly Cloudy</span>
+                </div>
+                <ul>
+                    <li>Humidity: 75%</li>
+                    <li>Wind: 9 km/h</li>
+                    <li>Chance of rain: 20%</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="highlights">
+            <h2>Featured Businesses</h2>
+            <div class="highlights-grid">
+                <article class="highlight">
+                    <img src="images/aling-rosa-market.webp" alt="Aling Rosa Market">
+                    <h3>Aling Rosa Market</h3>
+                    <p>Fresh produce, household staples, and daily essentials for the community.</p>
+                </article>
+
+                <article class="highlight">
+                    <img src="images/dela-cruz-eatery.webp" alt="Dela Cruz Eatery">
+                    <h3>Dela Cruz Eatery</h3>
+                    <p>Popular local restaurant serving comforting Filipino dishes and family meals.</p>
+                </article>
+
+                <article class="highlight">
+                    <img src="images/dizon-auto-care.webp" alt="Dizon Auto Care">
+                    <h3>Dizon Auto Care</h3>
+                    <p>Reliable auto repair and maintenance services for everyday drivers.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <address class="footer-contact">
+                <p class="footer-name">Mangaldan Chamber of Commerce</p>
+                <p>Poblacion, Mangaldan, Pangasinan</p>
+                <p><a href="mailto:info@mangaldanchamber.example">info@mangaldanchamber.example</a></p>
+                <p><a href="tel:+639175550100">0917 555 0100</a></p>
+            </address>
+
+            <ul class="social-links" aria-label="Social media">
+                <li>
+                    <a href="https://www.facebook.com/lehi.gomez.122023" aria-label="Facebook" target="_blank" rel="noopener">
+                        <img src="images/facebook.svg" alt="Facebook" width="44" height="44">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/lehibuilds" aria-label="GitHub" target="_blank" rel="noopener">
+                        <img src="images/github.svg" alt="GitHub" width="44" height="44">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/lehi-gomez-a639b723a/" aria-label="LinkedIn" target="_blank" rel="noopener">
+                        <img src="images/linkedin.svg" alt="LinkedIn" width="44" height="44">
+                    </a>
+                </li>
+            </ul>
+
+            <div class=" footer-credits">
+                <p>&copy; <span id="currentYear"></span> Mangaldan Chamber of Commerce</p>
+                <p>Last modified: <span id="lastModified"></span></p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
