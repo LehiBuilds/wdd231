@@ -117,7 +117,9 @@ async function loadMembers() {
     }
 }
 
-loadMembers();
+if (display) {
+    loadMembers();
+}
 
 /* ---------- Footer ---------- */
 

@@ -8,8 +8,12 @@
         --gutter: 3rem;
     }
 
+    /* Main layout spans the available viewport width. */
     main {
-        max-width: var(--content-max);
+        width: 100%;
+        max-width: none;
+        margin-inline: 0;
+        padding: 0;
     }
 
     /* Header: logo | links | theme toggle on one row */
@@ -133,3 +137,166 @@
 }
 
 */
+
+/* =========================================
+   HOME PAGE — TABLET AND DESKTOP (768px+)
+========================================= */
+
+@media (min-width: 48rem) {
+    .home-page {
+        width: 100%;
+        max-width: none;
+        margin-inline: 0;
+        padding: 0 0 4rem;
+    }
+
+    /* Full-bleed hero: edge-to-edge with square corners. */
+    .home-page .hero {
+        width: 100%;
+        min-height: clamp(38rem, 58vw, 46rem);
+        border-radius: 0;
+    }
+
+    .home-page .hero-image {
+        border-radius: 0;
+    }
+
+    /* Keep the remaining homepage content comfortably inset. */
+    .home-page>.info-grid,
+    .home-page>.highlights {
+        width: min(calc(100% - 3rem), var(--content-max));
+        margin-inline: auto;
+    }
+
+    .home-page .hero-image img {
+        object-position: center 42%;
+    }
+
+    .home-page .hero-image::after {
+        background:
+            linear-gradient(90deg,
+                rgba(12, 24, 23, 0.66) 0%,
+                rgba(12, 24, 23, 0.42) 50%,
+                rgba(12, 24, 23, 0.66) 100%),
+            linear-gradient(180deg,
+                rgba(12, 24, 23, 0.32) 0%,
+                rgba(12, 24, 23, 0.18) 42%,
+                rgba(12, 24, 23, 0.78) 100%);
+    }
+
+    .home-page .hero-content {
+        align-self: stretch;
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr) auto auto;
+        justify-items: center;
+        max-width: none;
+        min-height: inherit;
+        padding: clamp(3rem, 6vw, 5rem) clamp(3rem, 8vw, 7rem);
+        text-align: center;
+    }
+
+    .home-page .eyebrow {
+        padding: 0.65rem 1.05rem;
+        font-size: 0.74rem;
+    }
+
+    .home-page .hero h1 {
+        align-self: center;
+        justify-self: center;
+        max-width: 12ch;
+        font-size: clamp(4.4rem, 7.3vw, 6.6rem);
+    }
+
+    .home-page .hero-content>p:not(.eyebrow) {
+        max-width: 43rem;
+        margin-bottom: 1.6rem;
+        font-size: 1.12rem;
+    }
+
+    .home-page .hero-actions {
+        max-width: 30rem;
+    }
+
+    .home-page .info-grid {
+        grid-template-columns: minmax(0, 1.5fr) minmax(15rem, 0.8fr);
+        gap: 0;
+        margin-top: 2.5rem;
+        padding-block: 1.8rem;
+    }
+
+    .home-page .card {
+        padding-block: 0;
+    }
+
+    .home-page .card--event {
+        padding-right: clamp(1.5rem, 4vw, 3.5rem);
+    }
+
+    .home-page .card--weather {
+        padding-left: clamp(1.5rem, 4vw, 3rem);
+        border-top: 0;
+        border-left: 1px solid var(--line);
+    }
+
+    .home-page .card--event ul {
+        grid-auto-columns: auto;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+        overflow-x: visible;
+        padding-bottom: 0;
+        scroll-snap-type: none;
+    }
+
+    .home-page .card li {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .home-page .card--weather ul {
+        gap: 0.35rem;
+    }
+
+    .home-page .highlights {
+        margin-top: 3.25rem;
+    }
+
+    .home-page .highlights>h2 {
+        margin-bottom: 1.35rem;
+    }
+
+    .home-page .highlights-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 1.5rem;
+        row-gap: 2rem;
+    }
+
+    .home-page .highlight {
+        display: block;
+        padding: 0;
+        border: 0;
+    }
+
+    .home-page .highlight img {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+    }
+
+    .home-page .highlight h3 {
+        padding: 0.9rem 0 0.35rem;
+    }
+
+    .home-page .highlight p {
+        max-width: 34rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .home-page .highlights-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 2rem;
+    }
+}

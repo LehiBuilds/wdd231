@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="styles/large.css">
     <link rel="icon" href="./images/favicon.ico">
     <script src="./scripts/site.js" defer></script>
+    <script src="./scripts/home.js" defer></script>
 </head>
 
 <body>
@@ -91,57 +92,30 @@
             </div>
         </section>
 
-        <section class="info-grid">
-            <article class="card card--event">
-                <h2>Current Events</h2>
-                <ul>
-                    <li>
-                        <strong>Business Networking Mixer</strong><br>
-                        Friday, 5:00 PM<br>
-                        Town Plaza
-                    </li>
-                    <li>
-                        <strong>Local Market Day</strong><br>
-                        Saturday, 8:00 AM<br>
-                        Mangaldan Public Market
-                    </li>
-                </ul>
-            </article>
+        <section class="card card--event" aria-labelledby="events-heading">
+            <h2 id="events-heading">Current Events</h2>
+            <ul id="event-list">
+                <li class="data-placeholder">Event information will appear here.</li>
+            </ul>
+        </section>
 
-            <article class="card card--weather">
-                <h2>Weather</h2>
-                <div class="weather-summary">
-                    <span class="weather-temp">31°C</span>
-                    <span class="weather-condition">Partly Cloudy</span>
-                </div>
-                <ul>
-                    <li>Humidity: 75%</li>
-                    <li>Wind: 9 km/h</li>
-                    <li>Chance of rain: 20%</li>
-                </ul>
-            </article>
+
+        <section class="card card--weather" aria-labelledby="weather-heading">
+            <h2 id="weather-heading">Weather</h2>
+            <div class="weather-summary" id="weather-summary" aria-live="polite">
+                <span id="weather-icon" class="weather-icon" aria-hidden="true"></span>
+                <span class="weather-temp" id="weather-temp">--°</span>
+                <span class="weather-condition" id="weather-condition">Weather conditions will appear here.</span>
+            </div>
+            <ul id="weather-details" class="weather-details">
+                <li class="data-placeholder">Weather details will appear here.</li>
+            </ul>
         </section>
 
         <section class="highlights">
             <h2>Featured Businesses</h2>
-            <div class="highlights-grid">
-                <article class="highlight">
-                    <img src="images/aling-rosa-market.webp" alt="Aling Rosa Market">
-                    <h3>Aling Rosa Market</h3>
-                    <p>Fresh produce, household staples, and daily essentials for the community.</p>
-                </article>
-
-                <article class="highlight">
-                    <img src="images/dela-cruz-eatery.webp" alt="Dela Cruz Eatery">
-                    <h3>Dela Cruz Eatery</h3>
-                    <p>Popular local restaurant serving comforting Filipino dishes and family meals.</p>
-                </article>
-
-                <article class="highlight">
-                    <img src="images/dizon-auto-care.webp" alt="Dizon Auto Care">
-                    <h3>Dizon Auto Care</h3>
-                    <p>Reliable auto repair and maintenance services for everyday drivers.</p>
-                </article>
+            <div class="highlights-grid" id="featured-businesses">
+                <p class="data-placeholder">Featured business images and details will appear here.</p>
             </div>
         </section>
     </main>
@@ -175,6 +149,7 @@
             </ul>
 
             <div class=" footer-credits">
+                <p>By Lehi Gomez</p>
                 <p>&copy; <span id="currentYear"></span> Mangaldan Chamber of Commerce</p>
                 <p>Last modified: <span id="lastModified"></span></p>
             </div>
