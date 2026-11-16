@@ -62,22 +62,45 @@ function displayEvents(events) {
 
 function businessCard(member) {
     const phoneLink = member.phone.replace(/[^\d+]/g, "");
+    const membershipLevels = { 2: "Silver", 3: "Gold" };
 
     return `
         <article class="highlight">
             <img src="./images/${encodeURIComponent(member.image)}"
-                alt="${escapeHTML(member.name)}" loading="lazy">
+                alt="${escapeHTML(member.name)} logo" loading="lazy">
             <div class="highlight-content">
                 <h3>${escapeHTML(member.name)}</h3>
-                <p>${escapeHTML(member.tagline)}</p>
-                <p>${escapeHTML(member.description)}</p>
                 <p><strong>Address:</strong> ${escapeHTML(member.address)}</p>
                 <p><strong>Phone:</strong>
                     <a href="tel:${escapeHTML(phoneLink)}">${escapeHTML(member.phone)}</a>
                 </p>
+                <p><strong>Website:</strong>
+                    <a href="${escapeHTML(member.website)}" target="_blank" rel="noopener">
+                        ${escapeHTML(member.website)}
+                    </a>
+                </p>
+                <p><strong>Membership:</strong>
+                    <span class="badge badge-level-${member.membershipLevel}">
+                        ${membershipLevels[member.membershipLevel]}
+                    </span>
+                </p>
             </div>
         </article>
     `;
+}
+
+function chooseSpotlights(members) {
+    const eligibleMembers = members.filter(
+        (member) => member.membershipLevel === 2 || member.membershipLevel === 3
+    );
+
+    for (let index = eligibleMembers.length - 1; index > 0; index -= 1) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [eligibleMembers[index], eligibleMembers[randomIndex]] =
+            [eligibleMembers[randomIndex], eligibleMembers[index]];
+    }
+
+    return eligibleMembers.slice(0, 3);
 }
 
 async function loadBusinesses() {
@@ -92,7 +115,12 @@ async function loadBusinesses() {
             throw new TypeError("Member data must be an array.");
         }
 
-        businessList.innerHTML = members.slice(0, 3).map(businessCard).join("");
+        const spotlights = chooseSpotlights(members);
+        if (spotlights.length < 3) {
+            throw new Error("At least three Silver or Gold members are required for spotlights.");
+        }
+
+        businessList.innerHTML = spotlights.map(businessCard).join("");
     } catch (error) {
         console.error("Could not load featured businesses:", error);
         businessList.innerHTML = `
