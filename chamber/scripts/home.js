@@ -4,6 +4,7 @@ const weatherIcon = document.querySelector("#weather-icon");
 const weatherTemp = document.querySelector("#weather-temp");
 const weatherCondition = document.querySelector("#weather-condition");
 const weatherDetails = document.querySelector("#weather-details");
+const forecastList = document.querySelector("#forecast-list");
 
 const sampleEvents = [
     {
@@ -130,24 +131,114 @@ async function loadWeather() {
         weatherTemp.textContent = `${Math.round(data.main.temp)}°C`;
         weatherCondition.textContent = currentWeather.description;
         weatherDetails.innerHTML = `
-            <li class="weather-detail">
-                <span class="weather-detail__label">Humidity</span>
-                <strong class="weather-detail__value">${data.main.humidity}%</strong>
+            <li>
+                <span>Humidity</span>
+                <strong>${data.main.humidity}%</strong>
             </li>
-            <li class="weather-detail">
-                <span class="weather-detail__label">Wind</span>
-                <strong class="weather-detail__value">${Math.round(data.wind.speed * 3.6)} km/h</strong>
+            <li>
+                <span>Wind</span>
+                <strong>${Math.round(data.wind.speed * 3.6)} km/h</strong>
             </li>
         `;
     } catch (error) {
         console.error("Could not load weather:", error);
         weatherCondition.textContent = "Weather data could not be loaded.";
         weatherDetails.innerHTML = `
-            <li class="data-placeholder">Weather details are unavailable.</li>
+            <li>Weather details are unavailable.</li>
         `;
+    }
+}
+
+function dateKey(date) {
+    return [
+        date.getUTCFullYear(),
+        String(date.getUTCMonth() + 1).padStart(2, "0"),
+        String(date.getUTCDate()).padStart(2, "0")
+    ].join("-");
+}
+
+function getNextThreeDays(entries, timezoneOffset) {
+    const today = new Date(Date.now() + timezoneOffset * 1000);
+    const todayKey = dateKey(today);
+    const dailyForecasts = new Map();
+
+    entries.forEach((entry) => {
+        const localDate = new Date((entry.dt + timezoneOffset) * 1000);
+        const key = dateKey(localDate);
+        if (key <= todayKey) {
+            return;
+        }
+
+        const localHour = localDate.getUTCHours() + localDate.getUTCMinutes() / 60;
+        const distanceFromNoon = Math.abs(localHour - 12);
+        const existingForecast = dailyForecasts.get(key);
+
+        if (!existingForecast || distanceFromNoon < existingForecast.distanceFromNoon) {
+            dailyForecasts.set(key, { entry, localDate, distanceFromNoon });
+        }
+    });
+
+    return [...dailyForecasts.entries()]
+        .sort(([firstDate], [secondDate]) => firstDate.localeCompare(secondDate))
+        .slice(0, 3)
+        .map(([, forecast]) => forecast);
+}
+
+function renderForecast(forecasts) {
+    forecastList.innerHTML = forecasts.map(({ entry, localDate }) => {
+        const forecastWeather = entry.weather[0];
+        const day = new Intl.DateTimeFormat("en", {
+            weekday: "long",
+            timeZone: "UTC"
+        }).format(localDate);
+
+        return `
+            <li>
+                <h4>${day}</h4>
+                <img src="https://openweathermap.org/img/wn/${encodeURIComponent(forecastWeather.icon)}@2x.png"
+                    alt="${escapeHTML(forecastWeather.description)}">
+                <p>${Math.round(entry.main.temp)}°C</p>
+                <p>${escapeHTML(forecastWeather.description)}</p>
+            </li>
+        `;
+    }).join("");
+}
+
+async function loadForecast() {
+
+
+    const url = new URL("https://api.openweathermap.org/data/2.5/forecast");
+    url.search = new URLSearchParams({
+        lat: latitude,
+        lon: longitude,
+        appid: apiKey,
+        units: "metric"
+    });
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Forecast request failed: HTTP ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (!Array.isArray(data.list) || !Number.isFinite(data.city?.timezone)) {
+            throw new TypeError("Forecast response is missing forecast data or timezone.");
+        }
+
+        const forecasts = getNextThreeDays(data.list, data.city.timezone);
+        if (forecasts.length !== 3) {
+            throw new Error("OpenWeatherMap returned fewer than three forecast days.");
+        }
+
+        renderForecast(forecasts);
+    } catch (error) {
+        console.error("Could not load forecast:", error);
+        forecastList.textContent = "Three-day forecast is unavailable.";
     }
 }
 
 displayEvents(sampleEvents);
 loadBusinesses();
 loadWeather();
+loadForecast();

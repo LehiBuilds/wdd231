@@ -100,15 +100,19 @@
         </section>
 
 
-        <section class="card card--weather" aria-labelledby="weather-heading">
+        <section aria-labelledby="weather-heading">
             <h2 id="weather-heading">Weather</h2>
-            <div class="weather-summary" id="weather-summary" aria-live="polite">
-                <span id="weather-icon" class="weather-icon" aria-hidden="true"></span>
-                <span class="weather-temp" id="weather-temp">--°</span>
-                <span class="weather-condition" id="weather-condition">Weather conditions will appear here.</span>
+            <div id="weather-summary" aria-live="polite">
+                <span id="weather-icon" aria-hidden="true"></span>
+                <span id="weather-temp">--°</span>
+                <span id="weather-condition">Weather conditions will appear here.</span>
             </div>
-            <ul id="weather-details" class="weather-details">
-                <li class="data-placeholder">Weather details will appear here.</li>
+            <ul id="weather-details">
+                <li>Weather details will appear here.</li>
+            </ul>
+            <h3>3-Day Forecast</h3>
+            <ul id="forecast-list" aria-live="polite">
+                <li>Forecast data will appear here.</li>
             </ul>
         </section>
 

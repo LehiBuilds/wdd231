@@ -8,14 +8,6 @@
         --gutter: 3rem;
     }
 
-    /* Main layout spans the available viewport width. */
-    main {
-        width: 100%;
-        max-width: none;
-        margin-inline: 0;
-        padding: 0;
-    }
-
     /* Header: logo | links | theme toggle on one row */
     .header-inner {
         grid-template-columns: 1fr auto auto;
@@ -74,7 +66,7 @@
     }
 }
 
-@media (min-width: 47.5rem) {
+@media (min-width: 48rem) {
     .members.list .member-card {
         display: grid;
         grid-template-columns: 16.25rem minmax(0, 1fr);
@@ -111,33 +103,6 @@
 }
 
 
-/* 
-
-@media (min-width: 48rem) {
-    .home-page {
-        padding-top: 1.5rem;
-    }
-
-    .home-page .hero {
-        grid-template-columns: 1.2fr 1fr;
-        align-items: center;
-    }
-
-    .home-page .hero__content {
-        padding: 2rem;
-    }
-
-    .home-page .info-grid {
-        grid-template-columns: 1.35fr 0.95fr;
-    }
-
-    .home-page .highlights__grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-
-*/
-
 /* =========================================
    HOME PAGE — TABLET AND DESKTOP (768px+)
 ========================================= */
@@ -159,13 +124,6 @@
 
     .home-page .hero-image {
         border-radius: 0;
-    }
-
-    /* Keep the remaining homepage content comfortably inset. */
-    .home-page>.info-grid,
-    .home-page>.highlights {
-        width: min(calc(100% - 3rem), var(--content-max));
-        margin-inline: auto;
     }
 
     .home-page .hero-image img {
@@ -217,25 +175,12 @@
         max-width: 30rem;
     }
 
-    .home-page .info-grid {
-        grid-template-columns: minmax(0, 1.5fr) minmax(15rem, 0.8fr);
-        gap: 0;
+    .home-page .card--event {
         margin-top: 2.5rem;
-        padding-block: 1.8rem;
     }
 
     .home-page .card {
         padding-block: 0;
-    }
-
-    .home-page .card--event {
-        padding-right: clamp(1.5rem, 4vw, 3.5rem);
-    }
-
-    .home-page .card--weather {
-        padding-left: clamp(1.5rem, 4vw, 3rem);
-        border-top: 0;
-        border-left: 1px solid var(--line);
     }
 
     .home-page .card--event ul {
@@ -251,10 +196,6 @@
     .home-page .card li {
         padding-bottom: 0;
         border-bottom: 0;
-    }
-
-    .home-page .card--weather ul {
-        gap: 0.35rem;
     }
 
     .home-page .highlights {
