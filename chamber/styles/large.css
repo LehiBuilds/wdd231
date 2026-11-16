@@ -183,6 +183,38 @@
         padding-block: 0;
     }
 
+    .home-page .card--weather {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 1.5rem;
+        margin-top: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .home-page .card--weather h2,
+    .home-page .card--weather h3,
+    .home-page #forecast-list {
+        grid-column: 1 / -1;
+    }
+
+    .home-page #weather-summary {
+        grid-template-columns: auto auto minmax(0, 1fr);
+        padding: 1rem;
+    }
+
+    .home-page #weather-details {
+        align-self: stretch;
+    }
+
+    .home-page #forecast-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .home-page #forecast-list li {
+        padding: 0.85rem;
+        font-size: 0.9rem;
+    }
+
     .home-page .card--event ul {
         grid-auto-columns: auto;
         grid-auto-flow: row;
