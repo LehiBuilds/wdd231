@@ -212,13 +212,26 @@ h2 {
     padding: 0.5rem 0;
 }
 
-.course-list div {
-    grid-column: span 2;
+.course-list button {
     background: #f1f1f1;
     padding: 0.5rem;
     border-radius: 8px;
     transition: all 0.3s ease;
     gap: 0.5rem;
+    border: none;
+}
+
+.course-list button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    background-color: #d1d1d1;
+}
+
+
+.course-list button:focus-visible {
+    outline: none;
+    outline: 2px dashed #000000;
+    box-shadow: 0 0 0 2px #ffffff;
 }
 
 .credit-summary {

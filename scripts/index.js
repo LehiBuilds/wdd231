@@ -1,6 +1,7 @@
 const hamburger = document.querySelector('#ham-btn');
 const navigation = document.querySelector('#nav-bar');
 
+
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('show');
     navigation.classList.toggle('show');
@@ -168,11 +169,12 @@ function renderCourses(courseArray, targetListElement, targetCreditElement) {
 
     courseArray.forEach(course => {
         targetListElement.innerHTML +=
-            `<div class="course-card">
+            `<button class="course-card" data-course-index="${courses.indexOf(course)}">
                 <span>${course.completed ? '✔️' : '❌'}</span>
                 <span ><strong>${course.subject} ${course.number}</strong></span>
+                <br>
                 <span class="course-title">${course.title}</span>
-            </div>`;
+            </button>`;
     });
 
     const totalCredits = courseArray.reduce((total, course) => total + course.credits, 0);
@@ -200,6 +202,42 @@ filterBtn.forEach(btn => {
         }
     })
 })
+
+/***************** COURSE DETAILS MODAL ******************/
+const modal = document.querySelector('#course-details');
+
+function displayCourseDetails(course) {
+    modal.innerHTML = `
+    <button id="closeModal" aria-label="Close">❌</button>
+    <h2>${course.subject} ${course.number}</h2>
+    <h3>${course.title}</h3>
+    <p><strong>Credits</strong>: ${course.credits}</p>
+    <p><strong>Certificate</strong>: ${course.certificate}</p>
+    <p>${course.description}</p>
+    <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+    `;
+    modal.showModal();
+    modal.querySelector('#closeModal').addEventListener('click', () => {
+        modal.close();
+    })
+}
+
+courseList.addEventListener('click', (event) => {
+    const courseCard = event.target.closest('.course-card');
+    if (!courseCard) {
+        return;
+    }
+
+    const course = courses[Number(courseCard.dataset.courseIndex)];
+    displayCourseDetails(course);
+});
+
+modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.close();
+    }
+})
+
 
 /***************** FOOTER ******************/
 const year = document.querySelector("#currentyear");
