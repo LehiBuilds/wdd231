@@ -84,7 +84,7 @@
 
                     <label for="email">
                         Email address
-                        <input id="email" name="email" type="email" autocomplete="email" title="Enter a valid email address." required>
+                        <input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" title="Enter a valid email address." required>
                     </label>
 
                     <label for="mobile">
@@ -95,6 +95,11 @@
                     <label for="business-name">
                         Business or organization name
                         <input id="business-name" name="businessName" type="text" autocomplete="organization" title="Enter your business or organization name." required>
+                    </label>
+
+                    <label for="organization-title">
+                        Organization title
+                        <input id="organization-title" name="organizationTitle" type="text" autocomplete="organization-title" title="Enter your title within the organization." required>
                     </label>
 
                     <fieldset class="membership-options">
@@ -115,7 +120,18 @@
             <aside class="membership-levels" aria-labelledby="membership-heading">
                 <h2 id="membership-heading">Membership Levels</h2>
                 <div class="membership-cards" id="membership-cards"></div>
-                <div id="membership-dialogs"></div>
+                <dialog id="membership-dialog" aria-labelledby="membership-dialog-title">
+                    <div class="dialog-header">
+                        <h2 id="membership-dialog-title"></h2>
+                        <form method="dialog">
+                            <button class="dialog-close" type="submit" aria-label="Close membership benefits">
+                                <span aria-hidden="true">❌</span>
+                            </button>
+                        </form>
+                    </div>
+                    <p class="dialog-summary"></p>
+                    <ul class="benefit-list"></ul>
+                </dialog>
             </aside>
         </div>
 

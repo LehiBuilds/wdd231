@@ -191,12 +191,11 @@ const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => (
 function renderMembershipLevels() {
     const options = document.querySelector("#membership-options");
     const cards = document.querySelector("#membership-cards");
-    const dialogs = document.querySelector("#membership-dialogs");
 
     if (options) {
         options.innerHTML = membershipLevels.map((membership, index) => `
             <label>
-                <input type="radio" name="membershipLevel" value="${escapeHtml(membership.name)}" ${index === 0 ? "required" : ""}>
+                <input type="radio" name="membershipLevel" value="${escapeHtml(membership.id)}" ${index === 0 ? "required" : ""}>
                 ${escapeHtml(membership.name)} — ${escapeHtml(membership.price)}
             </label>
         `).join("");
@@ -207,27 +206,8 @@ function renderMembershipLevels() {
             <article class="membership-card">
                 <h3>${escapeHtml(membership.name)}</h3>
                 <p>${escapeHtml(membership.price)}</p>
-                <a href="#${membership.id}-dialog" data-dialog-open aria-haspopup="dialog" aria-controls="${membership.id}-dialog">View benefits</a>
+                <a href="#membership-dialog" data-dialog-open="${membership.id}" aria-haspopup="dialog" aria-controls="membership-dialog">View benefits</a>
             </article>
-        `).join("");
-    }
-
-    if (dialogs) {
-        dialogs.innerHTML = membershipLevels.map((membership) => `
-            <dialog id="${membership.id}-dialog" aria-labelledby="${membership.id}-title">
-                <div class="dialog-header">
-                    <h2 id="${membership.id}-title">${escapeHtml(membership.name)} Benefits</h2>
-                    <form method="dialog">
-                        <button class="dialog-close" type="submit" aria-label="Close ${escapeHtml(membership.name)} benefits">
-                            <span aria-hidden="true">❌</span>
-                        </button>
-                    </form>
-                </div>
-                <p class="dialog-summary">${escapeHtml(membership.summary)} ${escapeHtml(membership.price)}</p>
-                <ul class="benefit-list">
-                    ${membership.benefits.map((benefit) => `<li>${escapeHtml(benefit)}</li>`).join("")}
-                </ul>
-            </dialog>
         `).join("");
     }
 }
@@ -283,7 +263,7 @@ if (thankyouDetails) {
         value ||= "Not provided";
 
         if (name === "membershipLevel" && value !== "Not provided") {
-            const membership = membershipLevels.find((level) => level.name === value);
+            const membership = membershipLevels.find((level) => level.id === value || level.name === value);
             if (membership) value = `${membership.name} — ${membership.price}`;
         }
 
@@ -308,8 +288,16 @@ if (thankyouDetails) {
 /* ---------- Form Dialog ---------- */
 document.querySelectorAll("[data-dialog-open]").forEach((link) => {
     link.addEventListener("click", (event) => {
-        const dialog = document.getElementById(link.hash.slice(1));
+        const dialog = document.getElementById("membership-dialog");
         if (dialog instanceof HTMLDialogElement) {
+            const membership = membershipLevels.find((level) => level.id === link.dataset.dialogOpen);
+            if (!membership) return;
+
+            dialog.querySelector("#membership-dialog-title").textContent = `${membership.name} Benefits`;
+            dialog.querySelector(".dialog-summary").textContent = `${membership.summary} ${membership.price}`;
+            dialog.querySelector(".benefit-list").innerHTML = membership.benefits
+                .map((benefit) => `<li>${escapeHtml(benefit)}</li>`)
+                .join("");
             event.preventDefault();
             dialog.showModal();
         }
