@@ -304,6 +304,15 @@ document.querySelectorAll("[data-dialog-open]").forEach((link) => {
     });
 });
 
+document.querySelectorAll("[data-dialog-close]").forEach((button) => {
+    button.addEventListener("click", () => {
+        const dialog = button.closest("dialog");
+        if (dialog instanceof HTMLDialogElement) {
+            dialog.close();
+        }
+    });
+});
+
 /* ---------- Footer ---------- */
 
 const year = document.querySelector("#currentYear");
