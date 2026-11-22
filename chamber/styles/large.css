@@ -187,9 +187,9 @@
 
     .home-page #weather-details {
         align-self: stretch;
-    }w
+    }
 
-    .home-page #forecast-list {
+    w .home-page #forecast-list {
         gap: 1rem;
     }
 
@@ -246,6 +246,11 @@
 
     .home-page .highlight p {
         max-width: 34rem;
+    }
+
+    .join-layout {
+        grid-template-columns: minmax(0, 1.2fr) minmax(17rem, 0.8fr);
+        align-items: start;
     }
 }
 

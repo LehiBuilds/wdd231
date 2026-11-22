@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lehi Gomez">
+    <meta name="description" content="Thank you for submitting a membership application to the Mangaldan Chamber of Commerce.">
+    <title>Thank You | Mangaldan Chamber of Commerce</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <link rel="icon" href="./images/favicon.ico">
+    <script src="./scripts/site.js" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html">
+                <img src="./images/logo.svg" alt="" width="44" height="44">
+                <span class="brand-name">Mangaldan Chamber of Commerce</span>
+            </a>
+
+            <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu">
+                <span class="menu-bars" aria-hidden="true"></span>
+            </button>
+
+            <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+            </nav>
+
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Dark mode">
+                <span class="theme-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main" class="thankyou">
+        <h1>Thank You for Joining!</h1>
+        <p class="thankyou-copy">We appreciate your interest in the Mangaldan Chamber of Commerce. Here is the application information you submitted:</p>
+        <dl class="submission-details" id="submission-details"></dl>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <address class="footer-contact">
+                <p class="footer-name">Mangaldan Chamber of Commerce</p>
+                <p>Poblacion, Mangaldan, Pangasinan</p>
+                <p><a href="mailto:info@mangaldanchamber.example">info@mangaldanchamber.example</a></p>
+                <p><a href="tel:+639175550100">0917 555 0100</a></p>
+            </address>
+
+            <ul class="social-links" aria-label="Social media">
+                <li><a href="https://www.facebook.com/lehi.gomez.122023" aria-label="Facebook" target="_blank" rel="noopener"><img src="images/facebook.svg" alt="Facebook" width="44" height="44"></a></li>
+                <li><a href="https://github.com/lehibuilds" aria-label="GitHub" target="_blank" rel="noopener"><img src="images/github.svg" alt="GitHub" width="44" height="44"></a></li>
+                <li><a href="https://www.linkedin.com/in/lehi-gomez-a639b723a/" aria-label="LinkedIn" target="_blank" rel="noopener"><img src="images/linkedin.svg" alt="LinkedIn" width="44" height="44"></a></li>
+            </ul>
+
+            <div class="footer-credits">
+                <p>&copy; <span id="currentYear"></span> Mangaldan Chamber of Commerce</p>
+                <p>Last modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
