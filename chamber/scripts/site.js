@@ -189,17 +189,7 @@ const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => (
 }[character]));
 
 function renderMembershipLevels() {
-    const options = document.querySelector("#membership-options");
     const cards = document.querySelector("#membership-cards");
-
-    if (options) {
-        options.innerHTML = membershipLevels.map((membership, index) => `
-            <label>
-                <input type="radio" name="membershipLevel" value="${escapeHtml(membership.id)}" ${index === 0 ? "required" : ""}>
-                ${escapeHtml(membership.name)} — ${escapeHtml(membership.price)}
-            </label>
-        `).join("");
-    }
 
     if (cards) {
         cards.innerHTML = membershipLevels.map((membership) => `

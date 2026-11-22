@@ -22,13 +22,9 @@
 
     <title>Join the Chamber | Mangaldan Chamber of Commerce</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
     <link rel="stylesheet" href="../styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 40rem)">
     <link rel="icon" href="./images/favicon.ico">
     <script src="./scripts/site.js" defer></script>
 </head>
@@ -99,12 +95,29 @@
 
                     <label for="organization-title">
                         Organization title
-                        <input id="organization-title" name="organizationTitle" type="text" autocomplete="organization-title" title="Enter your title within the organization." required>
+                        <input id="organization-title" name="organizationTitle" type="text" autocomplete="organization-title" pattern="[A-Za-z][A-Za-z0-9 &amp;.'/ -]{1,49}" title="Enter a title of 2 to 50 characters, beginning with a letter." required>
                     </label>
 
                     <fieldset class="membership-options">
                         <legend>Membership level</legend>
-                        <div id="membership-options"></div>
+                        <div id="membership-options">
+                            <label>
+                                <input type="radio" name="membershipLevel" value="np" required>
+                                NP Membership — No fee
+                            </label>
+                            <label>
+                                <input type="radio" name="membershipLevel" value="bronze">
+                                Bronze Membership — ₱1,500 annually
+                            </label>
+                            <label>
+                                <input type="radio" name="membershipLevel" value="silver">
+                                Silver Membership — ₱3,000 annually
+                            </label>
+                            <label>
+                                <input type="radio" name="membershipLevel" value="gold">
+                                Gold Membership — ₱5,000 annually
+                            </label>
+                        </div>
                     </fieldset>
 
                     <label for="description">
